@@ -1,17 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/scss/styles.css">
-</head>
-<body>
-    <section></section>
-    <section></section>
-    <section></section>
-    <section></section>
-    <section></section>
-</body>
+    <link rel="stylesheet" href="./css/scss/styles.css" />
+    <link rel='icon' href='/assets/img/ikona_ico.png' type='image/x-icon'/ >
+
+    <link rel="stylesheet" href="./lib/owl/dist/assets/owl.carousel.min.css" />
+    <link
+      rel="stylesheet"
+      href="./lib/owl/dist/assets/owl.theme.default.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <img
+          src="./assets/img/apple-icon-180x180.png"
+          alt="logo"
+          class="logo"
+        />
+        <ul class="navbar-list">
+          <li class="nav-item">O mnie</li>
+          <li class="nav-item">Umiejętności</li>
+          <li class="nav-item">Projekty</li>
+          <li class="nav-item">Referencje</li>
+          <li class="nav-item">Kontakt</li>
+        </ul>
+        <button class="hamburger">
+          <span class="hamburger-line"></span>
+        </button>
+      </nav>
+      <div class="introContainer">
+        <div class="intro">
+          <h1 class="main-heading">Adam Knieć</h1>
+          <p class="profession-subtitle">Front-End Developer</p>
+        </div>
+        <img
+          src="./assets/img/background-portrait.png"
+          alt="background-portrait"
+          class="background-portrait"
+        />
+      </div>
+    </header>
+    <section class="about-me">
+      <h3 class="section-header">O mnie</h3>
+      <div class="about-me-container">
+        <div class="vertical-menu-container">
+          <ul class="about-me-list">
+            <li class="list-item">Content</li>
+            <li class="list-item">Content</li>
+            <li class="list-item">Content</li>
+            <li class="list-item">Content</li>
+          </ul>
+        </div>
+        <div class="description-box-container">
+          <div class="description-box ">
+            <p>Description box Heading</p>
+            <ul class="description-box-content">
+              <li class="description-list-item">content pierwszy</li>
+              <li class="description-list-item">content pierwszy</li>
+              <li class="description-list-item">content pierwszy</li>
+              <li class="description-list-item">content pierwszy</li>
+            </ul>
+            <p>description box subbheading</p>
+          </div>
+          <div class="description-box ">
+            <p>Description box Heading</p>
+            <ul class="description-box-content">
+              <li class="description-list-item">content Drugi</li>
+              <li class="description-list-item">content Drugi</li>
+              <li class="description-list-item">content Drugi</li>
+              <li class="description-list-item">content Drugi</li>
+            </ul>
+            <p>description box subbheading</p>
+          </div>
+          <div class="description-box ">
+            <p>Description box Heading</p>
+            <ul class="description-box-content">
+              <li class="description-list-item">content Trzeci</li>
+              <li class="description-list-item">content Trzeci</li>
+              <li class="description-list-item">content Trzeci</li>
+              <li class="description-list-item">content Trzeci</li>
+            </ul>
+            <p>description box subbheading</p>
+          </div>
+          <div class="description-box ">
+            <p>Description box Heading</p>
+            <ul class="description-box-content">
+              <li class="description-list-item">content Czwarty</li>
+              <li class="description-list-item">content Czwarty</li>
+              <li class="description-list-item">content Czwarty</li>
+              <li class="description-list-item">content Czwarty</li>
+            </ul>
+            <p>description box subbheading</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="technologies">
+      <h3 class="section-header bg-dark">Technologie</h3>
+      <div class="technologies-container">
+        <div class="card">
+          <img
+            src="./assets/img/git-plain.svg"
+            alt="git icon"
+            class="tech-icon"
+          />
+          <p class="tech-name">GIT</p>
+        </div>
+        <div class="card">
+          <img
+            src="./assets/img/react-original.svg"
+            alt="react icon"
+            class="tech-icon"
+          />
+          <p class="tech-name">REACT</p>
+        </div>
+        <div class="card">
+          <img
+            src="./assets/img/redux-original.svg"
+            alt="redux icon"
+            class="tech-icon"
+          />
+          <p class="tech-name">REDUX</p>
+        </div>
+        <div class="card">
+          <img
+            src="./assets/img/javascript-original.svg"
+            alt="js icon"
+            class="tech-icon"
+          />
+          <p class="tech-name">JAVASCRIPT</p>
+        </div>
+        <div class="card">
+          <img
+            src="./assets/img/html5-plain.svg"
+            alt="html icon"
+            class="tech-icon"
+          />
+          <p class="tech-name">HTML</p>
+        </div>
+        <div class="card">
+          <img
+            src="./assets/img/css3-plain.svg"
+            alt="css icon"
+            class="tech-icon"
+          />
+          <p class="tech-name">CSS</p>
+        </div>
+        <div class="card">
+          <img
+            src="./assets/img/bootstrap-plain.svg"
+            alt="bootstrap icon"
+            class="tech-icon"
+          />
+          <p class="tech-name">BOOTSTRAP</p>
+        </div>
+        <div class="card">
+          <img
+            src="./assets/img/gulp-plain.svg"
+            alt="gulp icon"
+            class="tech-icon"
+          />
+          <p class="tech-name">GULP</p>
+        </div>
+        <div class="card">
+          <img
+            src="./assets/img/jquery-plain.svg"
+            alt="jq icon"
+            class="tech-icon"
+          />
+          <p class="tech-name">J-QUERY</p>
+        </div>
+        <div class="card">
+          <img
+            src="./assets/img/rwd-icon.svg"
+            alt="rwd icon"
+            class="tech-icon"
+          />
+          <p class="tech-name">RWD</p>
+        </div>
+        <div class="card">
+          <img
+            src="./assets/img/sass-original.svg"
+            alt="sass icon"
+            class="tech-icon"
+          />
+          <p class="tech-name">SASS</p>
+        </div>
+        <div class="card">
+          <img
+            src="./assets/img/npm-original-wordmark.svg"
+            alt="npm icon"
+            class="tech-icon"
+          />
+          <p class="tech-name">NPM</p>
+        </div>
+      </div>
+    </section>
+    <section class="projects">
+      <h3 class="section-header">Projekty</h3>
+      <div class="container">
+        <div class="left">
+          <div class="img-wrapper">
+            <img src="./assets/img/FINAL.png" alt="" class="" />
+          </div>
+          <div class="project-title-bar">jakis tam content</div>
+        </div>
+        <div class="right">
+          <div class="right-top">
+            <div class="project-inner-box">
+              <div class="img-wrapper">
+                <img
+                  src="./assets/img/iPhone.png"
+                  class="iphone-img
+            "
+                  alt=""
+                />
+              </div>
+
+              <div class="project-example">
+                <p class="title">KGRP</p>
+                <p class="tech-set">UX, JS, React</p>
+              </div>
+            </div>
+            <div class="project-inner-box">
+              <div class="img-wrapper">
+                <img
+                  src="./assets/img/iPhone.png"
+                  class="iphone-img
+              "
+                  alt=""
+                />
+              </div>
+
+              <div class="project-example">
+                <p class="title">KGRP</p>
+                <p class="tech-set">UX, JS, React</p>
+              </div>
+            </div>
+          </div>
+          <div class="right-bottom">
+            <img
+              src="./assets/img/FINAL.png"
+              alt=""
+              class="laptop-img
+            "
+            />
+
+            <div class="project-example">
+              <p class="title">KGRP</p>
+              <p class="project-description">Lorem cośtam</p>
+              <p class="tech-set">UX, JS, React</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="references">
+      <h3 class="section-header bg-dark">Referencje</h3>
+      <div class="owl-carousel">
+        <div class="reference-container">
+          <div class="reference-content">
+            <div class="reference-icon">
+              <!-- <img src="./assets/img/ikona-react@2x.png" alt="" /> -->
+            </div>
+            <!-- //nazwa klasy do zmiany -->
+            <div class="referenceInnerBox">
+              <span>Bolded something</span>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                nec erat mollis, varius est gravida, faucibus arcu. Cras ac
+                posuere velit.
+              </p>
+              <span>Bolded something</span>
+            </div>
+          </div>
+        </div>
+        <div class="reference-container">
+          <div class="reference-content">
+            <div class="reference-icon">
+              <!-- <img src="./assets/img/ikona-react@2x.png" alt="" /> -->
+            </div>
+            <!-- //nazwa klasy do zmiany -->
+            <div class="referenceInnerBox">
+              <span>Bolded something</span>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                nec erat mollis, varius est gravida, faucibus arcu. Cras ac
+                posuere velit.
+              </p>
+              <span>Bolded something</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="contact">
+      <h3 class="section-header">Skontaktuj sie</h3>
+      <div class="form-content-container">
+        <div class="contact-details">
+          <!-- // rozkminic ten kod pod katem semantyki -->
+          <p class="nameSurname">Adam Knieć</p>
+          <div class="details-box">
+            <img src="./assets/img/phone-icon.png" alt="phone-icon" />
+            <p class="phone-number">604684140</p>
+          </div>
+          <div class="details-box">
+            <img src="./assets/img/mail-icon.png" alt="mail-icon" />
+            <p class="email">adam.k.kniec@gmail.com</p>
+          </div>
+          <div class="details-box">
+            <img src="./assets/img/pointer-icon.png" alt="pointer-icon" />
+            <p class="address">Poznań</p>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form class="form">
+            <p>Wyslij wiadomosc</p>
+            <label class="label">
+              <input type="text" placeholder="Imie i nazwisko" />
+            </label>
+            <div class="labels-wrapper">
+              <label class="label-inline">
+                <input
+                  type="text"
+                  placeholder="Adres email"
+                  class="mail-input"
+                />
+              </label>
+              <label class="label-inline">
+                <input type="text" placeholder="tel" class="phone-input" />
+              </label>
+            </div>
+            <label class="label">
+              <input type="text" placeholder="tresc wiadomosci" />
+            </label>
+            <button type="submit" class="submit">Wyslij</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <p class="footer-content">zakodowane przez Adam Kniec</p>
+    </footer>
+    <script src="./lib/owl/docs_src/assets/vendors/jquery.min.js"></script>
+    <script src="./lib/owl/docs/assets/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/scripts/scripts.js"></script>
+  </body>
 </html>

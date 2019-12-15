@@ -1,3 +1,840 @@
+@import "./mixins/mixins";
+@font-face {
+  font-family: Roboto;
+  src: url("/assets/fonts/Roboto-Thin.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: Roboto-medium;
+  src: url("/assets/fonts/Roboto-Medium.ttf");
+  font-weight: bold;
+}
 body {
-    background-color: teal;
+  background-color: $black;
+  padding: 0;
+  margin: 0;
+  font-family: Roboto;
+
+  //common styles applied to every section
+  .about-me,
+  .technologies,
+  .projects,
+  .references,
+  .contact {
+    padding: 50px 100px 0 100px;
+    .section-header {
+      margin: 0;
+      padding: 0;
+      font-size: 2rem;
+      position: relative;
+      padding-top: 50px;
+      padding-bottom: 25px;
+      &:before {
+        content: "";
+        font-size: 1.2rem;
+        position: absolute;
+        top: 25px;
+        background: $main-green;
+        padding-left: 25px;
+        padding-right: 60px;
+        left: -25px;
+        color: $white;
+      }
+      @include breakpoint(mobileonly) {
+        margin-left: 5%;
+      }
+    }
+    // aplied to the subheaders with the dark background
+    .bg-dark {
+      color: $white;
+    }
+    @include breakpoint(desktop) {
+      padding-left: 20%;
+      padding-right: 20%;
+    }
+    @include breakpoint(largeDesktop) {
+      //shortcut
+      padding-left: 25%;
+      padding-right: 25%;
+    }
+
+    @include breakpoint(mobileonly) {
+      //shortcut
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+    &:after {
+      @include breakpoint(desktop) {
+        font-size: 8rem;
+      }
+      @include breakpoint(laptop) {
+        font-size: 6rem;
+      }
+      @include breakpoint(phablet) {
+        font-size: 4rem;
+      }
+      @include breakpoint(smallMobile) {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  //common styles end
+  .header {
+    background-color: $header-black;
+    height: auto;
+    overflow: hidden;
+
+    @include breakpoint(largeDesktop) {
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: 50px;
+      // position: relative;
+      z-index: 1;
+      transition: all 0.2s;
+
+      .logo {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        transform: translateX(-100px);
+        left: 0;
+      }
+      .navbar-list {
+        display: flex;
+        justify-content: flex-end;
+        justify-content: space-around;
+        margin: 0;
+        width: 600px;
+        color: $white;
+        list-style-type: none;
+        @include breakpoint(phablet) {
+          display: none;
+        }
+      }
+      .mobile {
+        display: flex;
+        position: absolute;
+        background-color: $black;
+        flex-direction: column;
+        top: 0;
+        right: 0;
+        width: 20%;
+        height: 100vh;
+        // color: $white;
+        z-index: 999;
+      }
+      .hamburger {
+        background: none;
+        border: 0;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        margin-right: 30px;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        display: none;
+
+        .hamburger-line {
+          border-bottom: 1px solid $white;
+          width: 20px;
+          color: $white;
+          background-color: $white;
+          position: absolute;
+          &::before,
+          &::after {
+            content: "";
+            width: 100%;
+            background-color: $white;
+            position: absolute;
+            height: 1px;
+            display: block;
+          }
+          &::before {
+            top: -5px;
+          }
+          &::after {
+            top: 5px;
+          }
+        }
+        @include breakpoint(phablet) {
+          display: flex;
+        }
+      }
+    }
+    // helper navbar class
+    .sticky {
+      position: fixed;
+      width: 100%;
+      background-color: $black;
+      z-index: 100;
+      opacity: 0.9;
+      .logo {
+        transform: translateX(50px);
+        transition: transform 0.2s;
+      }
+    }
+    .introContainer {
+      display: flex;
+      justify-content: center;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+      .intro {
+        position: absolute;
+        left: -15px;
+        width: 800px;
+        height: 800px;
+        margin-left: -200px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: $white;
+        background-color: $main-green;
+        border-radius: 100%;
+
+        @include breakpoint(largeDesktop) {
+          width: 1200px;
+          height: 1200px;
+          margin-left: -250px;
+        }
+        @include breakpoint(phablet) {
+          background-color: $main-green-opacity;
+        }
+        // @include breakpoint(smallMobile) {
+        //   margin-left: -280px;
+        // }
+        .main-heading {
+          font-size: 4rem;
+          margin-bottom: 0;
+          @include breakpoint(largeDesktop) {
+            font-size: 5rem;
+          }
+          @include breakpoint(mobileonly) {
+            transform: rotate(90deg);
+            position: absolute;
+            left: 10%;
+            font-size: 5rem;
+            top: 25%;
+          }
+        }
+        .profession-subtitle {
+          font-size: 1.8rem;
+          @include breakpoint(mobileonly) {
+            position: absolute;
+            bottom: 20%;
+          }
+        }
+        // background: linear-gradient(-45deg, #ee7752, #19a771, #025e33, #23d5ab);
+        // background-size: 400% 400%;
+        // animation: gradientBG 15s ease infinite;
+        animation: pulse 2s infinite;
+        @include breakpoint(phablet) {
+          animation: none;
+        }
+      }
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 $main-green;
+        }
+        70% {
+          box-shadow: 0 0 0 100px rgba(204, 169, 44, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+        }
+      }
+      // @keyframes gradientBG {
+      //   0% {
+      //     background-position: 0% 50%;
+      //   }
+      //   50% {
+      //     background-position: 100% 50%;
+      //   }
+      //   100% {
+      //     background-position: 0% 50%;
+      //   }
+      // }
+      .background-portrait {
+        margin-left: 50%;
+        height: 550px;
+        width: 510px;
+        @include breakpoint(largeDesktop) {
+          height: 700px;
+          width: 660px;
+        }
+      }
+    }
+  }
+  .about-me {
+    position: relative;
+    z-index: 2;
+    background-color: $background-light;
+    &::after {
+      content: "O mnie";
+      @include light-background-subheader;
+    }
+    .section-header::before {
+      content: "Krótko";
+    }
+    .about-me-container {
+      display: flex;
+      justify-content: center;
+      @include breakpoint(mobileonly) {
+        flex-direction: column;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        background-image: url("/assets/img/aboutBG.png");
+        height: 330px;
+        width: 500px;
+        background-repeat: no-repeat;
+        display: block;
+        position: absolute;
+        right: 10%;
+        top: 20px;
+        opacity: 0.2;
+        background-size: cover;
+        z-index: 1;
+        @include breakpoint(largeDesktop) {
+          right: 25%;
+        }
+      }
+      .vertical-menu-container {
+        display: flex;
+        align-items: center;
+        margin-right: 10%;
+        .about-me-list {
+          margin-right: 20%;
+          font-size: 20px;
+          .list-item {
+            opacity: 0.5;
+            transition: font-size 0.2s;
+            width: 60px;
+            height: 20px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            &:hover {
+              font-size: 1.6rem;
+              transition: font-size 0.2s;
+              opacity: 1;
+            }
+          }
+        }
+        @include breakpoint(phablet) {
+          display: none;
+        }
+      }
+    }
+    .description-box-container {
+      position: relative;
+      width: 60%;
+      z-index: 2;
+      .description-box {
+        display: block;
+        background-color: $white;
+        padding: 10px 0 10px 40px;
+        box-shadow: 0 1px 15px 0 $component-shadow;
+        animation: fadein 1s;
+        z-index: 233;
+        position: relative;
+        &:after {
+          content: "";
+          width: 200px;
+          height: 10px;
+          background-color: $main-green;
+          display: block;
+          position: absolute;
+          bottom: -5px;
+          right: 5%;
+        }
+        .description-box-content {
+          list-style-type: none;
+          padding: 0;
+          .description-list-item {
+            display: flex;
+            align-items: center;
+            &::before {
+              content: "\A";
+              width: 5px;
+              height: 5px;
+              border-radius: 50%;
+              background: $main-green;
+              display: inline-block;
+              margin: 0 10px;
+            }
+          }
+        }
+        @include breakpoint(mobileonly) {
+          display: block;
+        }
+        @include breakpoint(phablet) {
+          margin-bottom: 20px;
+        }
+      }
+      @keyframes fadein {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .hide {
+        display: none;
+      }
+      @include breakpoint(phablet) {
+        width: 100%;
+      }
+    }
+  }
+  .technologies {
+    background-color: $background-dark;
+    &::after {
+      content: "Technologie";
+      @include dark-background-subheader;
+    }
+    .section-header::before {
+      content: "Wykorzystywane";
+    }
+    .technologies-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 700px;
+      margin: 0 auto;
+      @include breakpoint(phablet) {
+        max-width: 560px;
+      }
+      .card {
+        text-align: center;
+        border-radius: 10%;
+        transition: 0.5s;
+        &:hover {
+          background: $main-green;
+          transition: 0.2s;
+          transform: scale(1.1);
+        }
+        &:hover .tech-name {
+          opacity: 1;
+        }
+        .tech-icon {
+          padding: 35px 35px 5px 35px;
+          width: 65px;
+          height: 55px;
+          @include breakpoint(phablet) {
+            width: 60px;
+            height: 50px;
+          }
+          @include breakpoint(mobileonly) {
+            padding: 40px 30px 0px 30px;
+            width: 45px;
+            height: 40px;
+          }
+        }
+        .tech-name {
+          max-height: 0;
+          opacity: 0;
+          padding-bottom: 15px;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  .projects {
+    background-color: $background-light;
+    &::after {
+      content: "Projekty";
+      @include light-background-subheader;
+    }
+    .section-header::before {
+      content: "Zrealizowane";
+    }
+
+    .container {
+      display: flex;
+      margin-left: 0;
+      width: auto;
+      width: 100%;
+      justify-content: center;
+      @include breakpoint(mobileonly) {
+        flex-wrap: wrap;
+      }
+      // common styles
+      .left,
+      .project-inner-box,
+      .right-bottom {
+        background-color: $white;
+        box-shadow: 0 1px 15px 0 $component-shadow;
+        transition: 0.2s;
+        z-index: 5;
+        &:hover {
+          transform: scale(1.1);
+          transition: 0.2s;
+          z-index: 50;
+          box-shadow: 0 1px 15px 0 $component-shadow-dark;
+          cursor: pointer;
+        }
+        .title {
+          margin-bottom: 0;
+          font-family: roboto-medium;
+          color: #9f9f9f;
+        }
+        .project-description {
+          margin-bottom: 0;
+        }
+        .tech-set {
+          color: $main-green;
+        }
+      }
+      // common styles end
+      .left {
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-right: 10px;
+        height: 300px;
+        position: relative;
+        @include breakpoint(mobileonly) {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+        //dodac klase nizej do img
+        .img-wrapper {
+          position: relative;
+          img {
+            height: 170px;
+            //testy !!!!!!!!!!!!!!!!!!!!!!!!!!!
+            // @include breakpoint(mobileonly) {
+            //   height: 250px;
+            // }
+          }
+          &::after {
+            content: "";
+            height: 40px;
+            width: 40px;
+            border: 10px solid $main-green;
+            position: absolute;
+            border-radius: 50%;
+            left: 10px;
+            top: -20px;
+            z-index: -1;
+          }
+        }
+
+        .project-title-bar {
+          background-color: $main-green;
+          color: $white;
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          height: 50px;
+          vertical-align: middle;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      .right {
+        height: 290px;
+        @include breakpoint(mobileonly) {
+          width: 100%;
+        }
+        @include breakpoint(smallMobile) {
+          height: auto;
+        }
+        .right-top {
+          display: flex;
+          height: 50%;
+          @include breakpoint(smallMobile) {
+            display: block;
+            height: auto;
+          }
+          .project-inner-box {
+            display: flex;
+            width: 220px;
+            justify-content: center;
+            align-items: center;
+            height: 145px;
+            // z-index: 5;
+            &:nth-child(1) {
+              margin-right: 10px;
+              ::after {
+                display: none;
+              }
+              @include breakpoint(smallMobile) {
+                margin-bottom: 10px;
+              }
+            }
+            @include breakpoint(mobileonly) {
+              width: 50%;
+            }
+            @include breakpoint(smallMobile) {
+              width: 100%;
+              justify-content: flex-start;
+              padding-left: 25px;
+              box-sizing: border-box;
+            }
+            .img-wrapper {
+              position: relative;
+              &::after {
+                content: "";
+                width: 30px;
+                height: 30px;
+                background-color: transparent;
+                position: absolute;
+                z-index: -1;
+                top: -10px;
+                left: -15px;
+                border-radius: 50%;
+                border: 10px solid $main-green;
+              }
+              .iphone-img {
+                height: 100px;
+                margin-right: 20px;
+              }
+              @include breakpoint(smallMobile) {
+                z-index: 10;
+              }
+            }
+
+            .project-example {
+              display: flex;
+              flex-direction: column;
+
+              justify-content: center;
+              text-align: left;
+            }
+          }
+        }
+        .right-bottom {
+          height: 50%;
+          margin-top: 10px;
+          display: flex;
+          align-items: center;
+          height: 145px;
+
+          .laptop-img {
+            height: 120px;
+            padding-left: 25px;
+            margin-right: 20px;
+          }
+          .project-example {
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+  .references {
+    background-color: $background-dark;
+    &::after {
+      content: "Referencje";
+
+      @include dark-background-subheader;
+    }
+    .section-header::before {
+      content: "Otrzymane";
+    }
+    .reference-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+
+      .reference-content {
+        max-width: 800px;
+        padding: 40px 0 40px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 80%;
+        // ponizszy after jest powtorzony -> mixin ?
+        @include breakpoint(phablet) {
+          width: 90%;
+        }
+        @include breakpoint(mobileonly) {
+          width: 100%;
+          // padding: 10px 10px;
+        }
+        &:after {
+          content: "";
+          width: 200px;
+          height: 10px;
+          background-color: $main-green;
+          display: block;
+          position: absolute;
+          bottom: -5px;
+          right: 5%;
+        }
+        .reference-icon {
+          width: 100px;
+          height: 100px;
+          background-color: $main-green;
+          border-radius: 50%;
+          position: absolute;
+          left: -10px;
+          @include breakpoint(phablet) {
+            left: auto;
+            top: -30px;
+            width: 70px;
+            height: 70px;
+          }
+        }
+        .referenceInnerBox {
+          width: 400px;
+          @include breakpoint(mobileonly) {
+            padding: 10px 10px;
+          }
+        }
+
+        background-color: $secondary-grey;
+      }
+    }
+
+    .owl-dots {
+      text-align: center;
+      padding-top: 15px;
+      button.owl-dot {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        display: inline-block;
+        background: $background-light;
+        margin: 0 3px;
+
+        &.active {
+          background-color: $main-green;
+        }
+      }
+    }
+  }
+  .contact {
+    background-color: $background-light;
+    &::after {
+      content: "Kontakt";
+
+      @include light-background-subheader;
+    }
+    .section-header::before {
+      content: "Śmiało,";
+    }
+    .form-content-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // flex-wrap: wrap;
+      @include breakpoint(mobileonly) {
+        flex-wrap: wrap;
+      }
+      .contact-details {
+        margin-right: 100px;
+        @include breakpoint(mobileonly) {
+          margin-bottom: 50px;
+        }
+        @include breakpoint(smallMobile) {
+          margin-right: auto;
+        }
+        .details-box {
+          display: flex;
+          align-items: center;
+          img {
+            padding-right: 20px;
+
+            width: 20px;
+          }
+          p {
+            margin: 0;
+            padding: 10px;
+          }
+        }
+      }
+      .contact-form {
+        width: 55%;
+        min-width: 400px;
+        @include breakpoint(mobileonly) {
+          width: auto;
+          min-width: 200px;
+        }
+        .phone-input {
+          width: auto;
+        }
+        .mail-input {
+          width: 60%;
+        }
+      }
+      .form {
+        background-color: $white;
+        padding: 50px;
+        position: relative;
+        box-shadow: 0 1px 15px 0 $component-shadow;
+
+        .label {
+          input[type="text"] {
+            outline: none;
+            border: none;
+            padding-top: 25px;
+            border-bottom: 1px solid $black;
+            width: 100%;
+          }
+        }
+
+        .labels-wrapper {
+          border-bottom: 1px solid black;
+          @include breakpoint(mobileonly) {
+            border-bottom: none;
+          }
+          input[type="text"] {
+            outline: none;
+            border: none;
+            padding-top: 25px;
+            @include breakpoint(mobileonly) {
+              border-bottom: 1px solid black;
+              width: 100%;
+            }
+          }
+        }
+        .submit {
+          display: block;
+          position: absolute;
+          bottom: -25px;
+          right: 10%;
+          color: $white;
+          background-color: $main-green;
+          width: 150px;
+          height: 50px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .footer {
+    height: 100px;
+    background-color: $background-dark;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+    .footer-content {
+      margin: 0;
+      vertical-align: center;
+    }
+  }
 }

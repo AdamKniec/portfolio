@@ -1,0 +1,56 @@
+//COLORS VARIABLES
+$main-green: #20845d;
+$background-dark: #3c3939;
+$background-light: #f2f2f2;
+$white: #ffffff;
+$black: #000;
+$header-black: #080808;
+$main-green-opacity: rgba(32, 132, 93, 0.6);
+$secondary-grey: #d3d3d3;
+// SHADOWS VARIABLES
+$component-shadow: rgba(112, 112, 112, 0.5);
+$component-shadow-dark: rgba(75, 71, 71, 0.8);
+//MIXINS
+
+// Background section sub-header
+@mixin light-background-subheader {
+  display: block;
+  text-align: right;
+  color: #ebebeb;
+}
+@mixin dark-background-subheader {
+  display: block;
+  text-align: right;
+  color: #ebebeb;
+  opacity: 0.1;
+}
+
+// RWD breakpoint mixin
+@mixin breakpoint($point) {
+  @if $point == largeDesktop {
+    @media (min-width: 90em) {
+      @content;
+    }
+  }
+  @if $point == desktop {
+    @media (min-width: 70em) {
+      @content;
+    }
+  } @else if $point == laptop {
+    @media (min-width: 62em) {
+      @content;
+    }
+  } @else if $point == phablet {
+    @media (max-width: 1000px) {
+      @content;
+    }
+  } @else if $point == mobileonly {
+    @media (max-width: 800px) {
+      @content;
+    }
+  } @else if $point == smallMobile {
+    @media (max-width: 500px) {
+      @content;
+    }
+  }
+}
