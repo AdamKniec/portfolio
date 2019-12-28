@@ -1,7 +1,7 @@
 //COLORS VARIABLES
 $main-green: #20845d;
 $background-dark: #3c3939;
-$background-light: #f2f2f2;
+$grey-light: #f2f2f2;
 $white: #ffffff;
 $black: #000;
 $header-black: #080808;
@@ -22,8 +22,8 @@ $component-shadow-dark: rgba(75, 71, 71, 0.8);
 @mixin dark-background-subheader {
   display: block;
   text-align: right;
-  color: #ebebeb;
-  opacity: 0.1;
+  color: #484646;
+  opacity: 0.7;
 }
 
 // RWD breakpoint mixin

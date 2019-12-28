@@ -29,6 +29,8 @@ body {
       position: relative;
       padding-top: 50px;
       padding-bottom: 25px;
+      font-family: roboto-medium;
+      color: $secondary-text-grey;
       &:before {
         content: "";
         font-size: 1.2rem;
@@ -45,9 +47,9 @@ body {
       }
     }
     // aplied to the subheaders with the dark background
-    .bg-dark {
-      color: $white;
-    }
+    // .bg-dark {
+    //   color: $white;
+    // }
     @include breakpoint(desktop) {
       padding-left: 20%;
       padding-right: 20%;
@@ -64,6 +66,7 @@ body {
       padding-right: 5%;
     }
     &:after {
+      font-family: roboto-medium;
       @include breakpoint(desktop) {
         font-size: 8rem;
       }
@@ -276,7 +279,7 @@ body {
   .about-me {
     position: relative;
     z-index: 2;
-    background-color: $background-light;
+    background-color: $grey-light;
     &::after {
       content: "O mnie";
       @include light-background-subheader;
@@ -431,6 +434,7 @@ body {
           padding: 35px 35px 5px 35px;
           width: 65px;
           height: 55px;
+
           @include breakpoint(phablet) {
             width: 60px;
             height: 50px;
@@ -451,7 +455,7 @@ body {
     }
   }
   .projects {
-    background-color: $background-light;
+    background-color: $grey-light;
     &::after {
       content: "Projekty";
       @include light-background-subheader;
@@ -692,7 +696,7 @@ body {
           background-color: $main-green;
           border-radius: 50%;
           position: absolute;
-          left: -10px;
+          left: -40px;
           @include breakpoint(phablet) {
             left: auto;
             top: -30px;
@@ -719,7 +723,7 @@ body {
         height: 15px;
         border-radius: 50%;
         display: inline-block;
-        background: $background-light;
+        background: $grey-light;
         margin: 0 3px;
 
         &.active {
@@ -729,7 +733,8 @@ body {
     }
   }
   .contact {
-    background-color: $background-light;
+    background-color: $grey-light;
+
     &::after {
       content: "Kontakt";
 
@@ -771,9 +776,62 @@ body {
       .contact-form {
         width: 55%;
         min-width: 400px;
+        position: relative;
+
+        &:before {
+          content: "";
+          height: 40px;
+          width: 40px;
+          border: 10px solid #20845d;
+          position: absolute;
+          bottom: -20px;
+          left: -20px;
+          border-radius: 50%;
+        }
         @include breakpoint(mobileonly) {
           width: auto;
           min-width: 200px;
+        }
+        .spinning-circle-left,
+        .spinning-circle-right {
+          height: 20px;
+          width: 20px;
+          border: 5px solid $main-green;
+          border-radius: 50%;
+          margin: 0 auto;
+          margin-top: 25%;
+          position: absolute;
+          top: -150px;
+          right: 30px;
+          animation: spin-left 4s linear infinite;
+
+          &:after {
+            content: "";
+            border: 2px solid $main-green;
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin-top: -50px;
+            margin-left: 20px;
+          }
+        }
+        .spinning-circle-right {
+          animation: spin-right 15s linear infinite;
+          &:after {
+            width: 2px;
+            height: 2px;
+          }
+        }
+        @keyframes spin-right {
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+        @keyframes spin-left {
+          100% {
+            transform: rotate(-360deg);
+          }
         }
         .phone-input {
           width: auto;
@@ -787,6 +845,17 @@ body {
         padding: 25px 50px 50px 50px;
         position: relative;
         box-shadow: 0 1px 15px 0 $component-shadow;
+
+        // &:before {
+        //   content: "";
+        //   height: 40px;
+        //   width: 40px;
+        //   border: 10px solid #20845d;
+        //   position: absolute;
+        //   bottom: -20px;
+        //   left: -20px;
+        //   border-radius: 50%;
+        // }
         .form-subheader {
           font-family: roboto-medium;
           color: $secondary-text-grey;

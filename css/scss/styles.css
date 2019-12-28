@@ -30,7 +30,9 @@ body {
       font-size: 2rem;
       position: relative;
       padding-top: 50px;
-      padding-bottom: 25px; }
+      padding-bottom: 25px;
+      font-family: roboto-medium;
+      color: #959595; }
       body .about-me .section-header:before,
       body .technologies .section-header:before,
       body .projects .section-header:before,
@@ -52,12 +54,6 @@ body {
         body .references .section-header,
         body .contact .section-header {
           margin-left: 5%; } }
-    body .about-me .bg-dark,
-    body .technologies .bg-dark,
-    body .projects .bg-dark,
-    body .references .bg-dark,
-    body .contact .bg-dark {
-      color: #ffffff; }
     @media (min-width: 70em) {
       body .about-me,
       body .technologies,
@@ -82,34 +78,40 @@ body {
       body .contact {
         padding-left: 5%;
         padding-right: 5%; } }
-    @media (min-width: 70em) {
-      body .about-me:after,
-      body .technologies:after,
-      body .projects:after,
-      body .references:after,
-      body .contact:after {
-        font-size: 8rem; } }
-    @media (min-width: 62em) {
-      body .about-me:after,
-      body .technologies:after,
-      body .projects:after,
-      body .references:after,
-      body .contact:after {
-        font-size: 6rem; } }
-    @media (max-width: 1000px) {
-      body .about-me:after,
-      body .technologies:after,
-      body .projects:after,
-      body .references:after,
-      body .contact:after {
-        font-size: 4rem; } }
-    @media (max-width: 500px) {
-      body .about-me:after,
-      body .technologies:after,
-      body .projects:after,
-      body .references:after,
-      body .contact:after {
-        font-size: 3rem; } }
+    body .about-me:after,
+    body .technologies:after,
+    body .projects:after,
+    body .references:after,
+    body .contact:after {
+      font-family: roboto-medium; }
+      @media (min-width: 70em) {
+        body .about-me:after,
+        body .technologies:after,
+        body .projects:after,
+        body .references:after,
+        body .contact:after {
+          font-size: 8rem; } }
+      @media (min-width: 62em) {
+        body .about-me:after,
+        body .technologies:after,
+        body .projects:after,
+        body .references:after,
+        body .contact:after {
+          font-size: 6rem; } }
+      @media (max-width: 1000px) {
+        body .about-me:after,
+        body .technologies:after,
+        body .projects:after,
+        body .references:after,
+        body .contact:after {
+          font-size: 4rem; } }
+      @media (max-width: 500px) {
+        body .about-me:after,
+        body .technologies:after,
+        body .projects:after,
+        body .references:after,
+        body .contact:after {
+          font-size: 3rem; } }
   body .header {
     background-color: #080808;
     height: auto;
@@ -368,8 +370,8 @@ body {
       content: "Technologie";
       display: block;
       text-align: right;
-      color: #ebebeb;
-      opacity: 0.1; }
+      color: #484646;
+      opacity: 0.7; }
     body .technologies .section-header::before {
       content: "Wykorzystywane"; }
     body .technologies .technologies-container {
@@ -579,8 +581,8 @@ body {
       content: "Referencje";
       display: block;
       text-align: right;
-      color: #ebebeb;
-      opacity: 0.1; }
+      color: #484646;
+      opacity: 0.7; }
     body .references .section-header::before {
       content: "Otrzymane"; }
     body .references .reference-container {
@@ -618,7 +620,7 @@ body {
           background-color: #20845d;
           border-radius: 50%;
           position: absolute;
-          left: -10px; }
+          left: -40px; }
           @media (max-width: 1000px) {
             body .references .reference-container .reference-content .reference-icon {
               left: auto;
@@ -677,11 +679,56 @@ body {
             padding: 10px; }
       body .contact .form-content-container .contact-form {
         width: 55%;
-        min-width: 400px; }
+        min-width: 400px;
+        position: relative; }
+        body .contact .form-content-container .contact-form:before {
+          content: "";
+          height: 40px;
+          width: 40px;
+          border: 10px solid #20845d;
+          position: absolute;
+          bottom: -20px;
+          left: -20px;
+          border-radius: 50%; }
         @media (max-width: 800px) {
           body .contact .form-content-container .contact-form {
             width: auto;
             min-width: 200px; } }
+        body .contact .form-content-container .contact-form .spinning-circle-left,
+        body .contact .form-content-container .contact-form .spinning-circle-right {
+          height: 20px;
+          width: 20px;
+          border: 5px solid #20845d;
+          border-radius: 50%;
+          margin: 0 auto;
+          margin-top: 25%;
+          position: absolute;
+          top: -150px;
+          right: 30px;
+          animation: spin-left 4s linear infinite; }
+          body .contact .form-content-container .contact-form .spinning-circle-left:after,
+          body .contact .form-content-container .contact-form .spinning-circle-right:after {
+            content: "";
+            border: 2px solid #20845d;
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin-top: -50px;
+            margin-left: 20px; }
+        body .contact .form-content-container .contact-form .spinning-circle-right {
+          animation: spin-right 15s linear infinite; }
+          body .contact .form-content-container .contact-form .spinning-circle-right:after {
+            width: 2px;
+            height: 2px; }
+
+@keyframes spin-right {
+  100% {
+    transform: rotate(360deg); } }
+
+@keyframes spin-left {
+  100% {
+    transform: rotate(-360deg); } }
         body .contact .form-content-container .contact-form .phone-input {
           width: auto; }
         body .contact .form-content-container .contact-form .mail-input {
