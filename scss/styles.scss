@@ -13,7 +13,7 @@ body {
   background-color: $black;
   padding: 0;
   margin: 0;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
 
   //common styles applied to every section
   .about-me,
@@ -22,6 +22,18 @@ body {
   .references,
   .contact {
     padding: 50px 100px 0 100px;
+    @include breakpoint(desktop) {
+      padding-left: 20%;
+      padding-right: 20%;
+    }
+    @include breakpoint(largeDesktop) {
+      padding-left: 25%;
+      padding-right: 25%;
+    }
+    @include breakpoint(mobileonly) {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
     .section-header {
       margin: 0;
       padding: 0;
@@ -29,8 +41,11 @@ body {
       position: relative;
       padding-top: 50px;
       padding-bottom: 25px;
-      font-family: roboto-medium;
+      font-family: roboto-medium, sans-serif;
       color: $secondary-text-grey;
+      @include breakpoint(mobileonly) {
+        margin-left: 5%;
+      }
       &:before {
         content: "";
         font-size: 1.2rem;
@@ -42,31 +57,10 @@ body {
         left: -25px;
         color: $white;
       }
-      @include breakpoint(mobileonly) {
-        margin-left: 5%;
-      }
-    }
-    // aplied to the subheaders with the dark background
-    // .bg-dark {
-    //   color: $white;
-    // }
-    @include breakpoint(desktop) {
-      padding-left: 20%;
-      padding-right: 20%;
-    }
-    @include breakpoint(largeDesktop) {
-      //shortcut
-      padding-left: 25%;
-      padding-right: 25%;
     }
 
-    @include breakpoint(mobileonly) {
-      //shortcut
-      padding-left: 5%;
-      padding-right: 5%;
-    }
     &:after {
-      font-family: roboto-medium;
+      font-family: roboto-medium, sans-serif;
       @include breakpoint(desktop) {
         font-size: 8rem;
       }
@@ -81,22 +75,17 @@ body {
       }
     }
   }
-
   //common styles end
   .header {
     background-color: $header-black;
     height: auto;
     overflow: hidden;
 
-    @include breakpoint(largeDesktop) {
-    }
-
     .navbar {
       display: flex;
       justify-content: flex-end;
       align-items: center;
       height: 50px;
-      // position: relative;
       z-index: 1;
       transition: all 0.2s;
 
@@ -107,6 +96,7 @@ body {
         transform: translateX(-100px);
         left: 0;
       }
+
       .navbar-list {
         display: flex;
         justify-content: flex-end;
@@ -117,6 +107,20 @@ body {
         list-style-type: none;
         @include breakpoint(phablet) {
           display: none;
+          justify-content: normal;
+          padding-top: 5%;
+        }
+        .nav-item {
+          @include breakpoint(phablet) {
+            margin-bottom: 70px;
+          }
+          a {
+            text-decoration: none;
+            color: $white;
+            &:hover {
+              border-bottom: 2px solid $main-green;
+            }
+          }
         }
       }
       .mobile {
@@ -128,7 +132,6 @@ body {
         right: 0;
         width: 20%;
         height: 100vh;
-        // color: $white;
         z-index: 999;
       }
       .hamburger {
@@ -142,7 +145,12 @@ body {
         justify-content: center;
         cursor: pointer;
         display: none;
-
+        @include breakpoint(phablet) {
+          display: flex;
+        }
+        @include breakpoint(smallMobile) {
+          z-index: 9;
+        }
         .hamburger-line {
           border-bottom: 1px solid $white;
           width: 20px;
@@ -164,9 +172,6 @@ body {
           &::after {
             top: 5px;
           }
-        }
-        @include breakpoint(phablet) {
-          display: flex;
         }
       }
     }
@@ -193,8 +198,7 @@ body {
         left: -15px;
         width: 800px;
         height: 800px;
-        margin-left: -200px;
-        margin-top: 30px;
+        margin: 30px auto auto -200px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -202,7 +206,8 @@ body {
         color: $white;
         background-color: $main-green;
         border-radius: 100%;
-
+        animation: pulse 2s infinite;
+        @include pulse-animation;
         @include breakpoint(largeDesktop) {
           width: 1200px;
           height: 1200px;
@@ -210,10 +215,12 @@ body {
         }
         @include breakpoint(phablet) {
           background-color: $main-green-opacity;
+          animation: none;
         }
-        // @include breakpoint(smallMobile) {
-        //   margin-left: -280px;
-        // }
+        @include breakpoint(smallMobile) {
+          border-radius: 0;
+        }
+
         .main-heading {
           font-size: 4rem;
           margin-bottom: 0;
@@ -235,36 +242,8 @@ body {
             bottom: 20%;
           }
         }
-        // background: linear-gradient(-45deg, #ee7752, #19a771, #025e33, #23d5ab);
-        // background-size: 400% 400%;
-        // animation: gradientBG 15s ease infinite;
-        animation: pulse 2s infinite;
-        @include breakpoint(phablet) {
-          animation: none;
-        }
       }
-      @keyframes pulse {
-        0% {
-          box-shadow: 0 0 0 0 $main-green;
-        }
-        70% {
-          box-shadow: 0 0 0 100px rgba(204, 169, 44, 0);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
-        }
-      }
-      // @keyframes gradientBG {
-      //   0% {
-      //     background-position: 0% 50%;
-      //   }
-      //   50% {
-      //     background-position: 100% 50%;
-      //   }
-      //   100% {
-      //     background-position: 0% 50%;
-      //   }
-      // }
+
       .background-portrait {
         margin-left: 50%;
         height: 550px;
@@ -281,11 +260,11 @@ body {
     z-index: 2;
     background-color: $grey-light;
     &::after {
-      content: "O mnie";
+      content: "About me";
       @include light-background-subheader;
     }
     .section-header::before {
-      content: "Krótko";
+      content: "Briefly";
     }
     .about-me-container {
       display: flex;
@@ -315,13 +294,16 @@ body {
         display: flex;
         align-items: center;
         margin-right: 10%;
+        @include breakpoint(phablet) {
+          display: none;
+        }
         .about-me-list {
           margin-right: 20%;
           font-size: 20px;
           .list-item {
             opacity: 0.5;
             transition: font-size 0.2s;
-            width: 60px;
+            width: 110px;
             height: 20px;
             margin-bottom: 10px;
             box-sizing: border-box;
@@ -332,32 +314,33 @@ body {
             }
           }
         }
-        @include breakpoint(phablet) {
-          display: none;
-        }
       }
     }
     .description-box-container {
       position: relative;
       width: 60%;
       z-index: 2;
+      @include breakpoint(phablet) {
+        width: 100%;
+      }
       .description-box {
         display: block;
         background-color: $white;
         padding: 10px 0 10px 40px;
         box-shadow: 0 1px 15px 0 $component-shadow;
-        animation: fadein 1s;
         z-index: 233;
         position: relative;
-        &:after {
-          content: "";
-          width: 200px;
-          height: 10px;
-          background-color: $main-green;
+        animation: fadein 1s;
+        @include fade-in-animation;
+        @include breakpoint(mobileonly) {
           display: block;
-          position: absolute;
-          bottom: -5px;
-          right: 5%;
+        }
+        @include breakpoint(phablet) {
+          margin-bottom: 20px;
+        }
+
+        &:after {
+          @include horizontal-green-bar;
         }
         .description-box-content {
           list-style-type: none;
@@ -376,37 +359,21 @@ body {
             }
           }
         }
-        @include breakpoint(mobileonly) {
-          display: block;
-        }
-        @include breakpoint(phablet) {
-          margin-bottom: 20px;
-        }
       }
-      @keyframes fadein {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
+      // gdzie to wrzucic w kodzie ? Ta nazwa jest troche bez sensu. Moze hidden ? Moze wszystkie helper classy wrzucic na sma dol pliku z komentarzem ?
       .hide {
         display: none;
-      }
-      @include breakpoint(phablet) {
-        width: 100%;
       }
     }
   }
   .technologies {
     background-color: $background-dark;
     &::after {
-      content: "Technologie";
+      content: "Technologies";
       @include dark-background-subheader;
     }
     .section-header::before {
-      content: "Wykorzystywane";
+      content: "Used";
     }
     .technologies-container {
       display: flex;
@@ -461,13 +428,12 @@ body {
       @include light-background-subheader;
     }
     .section-header::before {
-      content: "Zrealizowane";
+      content: "Completed";
     }
 
     .container {
       display: flex;
       margin-left: 0;
-      width: auto;
       width: 100%;
       justify-content: center;
       @include breakpoint(mobileonly) {
@@ -486,11 +452,14 @@ body {
           z-index: 2;
           box-shadow: 0 1px 15px 0 $component-shadow-dark;
           cursor: pointer;
+          @include breakpoint(smallMobile) {
+            transform: none;
+          }
         }
         .title {
           margin-bottom: 0;
-          font-family: roboto-medium;
-          color: #9f9f9f;
+          font-family: roboto-medium, sans-serif;
+          color: $secondary-text-grey;
         }
         .project-description {
           margin-bottom: 0;
@@ -501,7 +470,7 @@ body {
       }
       // common styles end
       .left {
-        width: 300px;
+        min-width: 300px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -514,28 +483,14 @@ body {
           margin-right: 0;
           margin-bottom: 10px;
         }
-        //dodac klase nizej do img
         .img-wrapper {
           position: relative;
           z-index: 10;
-          img {
+          .laptop-main {
             height: 170px;
-
-            //testy !!!!!!!!!!!!!!!!!!!!!!!!!!!
-            // @include breakpoint(mobileonly) {
-            //   height: 250px;
-            // }
           }
           &::after {
-            content: "";
-            height: 40px;
-            width: 40px;
-            border: 10px solid $main-green;
-            position: absolute;
-            border-radius: 50%;
-            left: 10px;
-            top: -20px;
-            z-index: -1;
+            @include circular-green-border(-10px, auto, auto, -15px);
           }
         }
 
@@ -570,19 +525,9 @@ body {
           .project-inner-box {
             display: flex;
             width: 220px;
+            height: 145px;
             justify-content: center;
             align-items: center;
-            height: 145px;
-            // z-index: 5;
-            &:nth-child(1) {
-              margin-right: 10px;
-              ::after {
-                display: none;
-              }
-              @include breakpoint(smallMobile) {
-                margin-bottom: 10px;
-              }
-            }
             @include breakpoint(mobileonly) {
               width: 50%;
             }
@@ -592,34 +537,29 @@ body {
               padding-left: 25px;
               box-sizing: border-box;
             }
+            &:nth-child(1) {
+              margin-right: 10px;
+              @include breakpoint(smallMobile) {
+                margin-bottom: 10px;
+              }
+            }
+            &:nth-child(2) {
+              .img-wrapper:after {
+                @include circular-green-border(auto, 5px, -10px, auto);
+              }
+            }
             .img-wrapper {
               position: relative;
               z-index: 10;
-              &::after {
-                content: "";
-                width: 30px;
-                height: 30px;
-                background-color: transparent;
-                position: absolute;
-                z-index: -1;
-                top: -10px;
-                left: -15px;
-                border-radius: 50%;
-                border: 10px solid $main-green;
-              }
               .iphone-img {
                 height: 100px;
                 margin-right: 20px;
-              }
-              @include breakpoint(smallMobile) {
-                z-index: 10;
               }
             }
 
             .project-example {
               display: flex;
               flex-direction: column;
-
               justify-content: center;
               text-align: left;
             }
@@ -640,7 +580,6 @@ body {
           .project-example {
             display: flex;
             flex-direction: column;
-
             justify-content: center;
             text-align: left;
           }
@@ -651,67 +590,81 @@ body {
   .references {
     background-color: $background-dark;
     &::after {
-      content: "Referencje";
-
+      content: "References";
       @include dark-background-subheader;
     }
     .section-header::before {
-      content: "Otrzymane";
+      content: "Received";
     }
-    .reference-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 300px;
+    // tutaj sprawdzic
 
-      .reference-content {
-        max-width: 800px;
-        padding: 40px 0 40px 0;
+    .owl-item {
+      @include breakpoint(mobileonly) {
+        margin-top: 60px;
+        margin-bottom: 60px;
+      }
+      .reference-container {
         display: flex;
         justify-content: center;
         align-items: center;
-        position: relative;
-        width: 80%;
-        // ponizszy after jest powtorzony -> mixin ?
-        @include breakpoint(phablet) {
-          width: 90%;
-        }
-        @include breakpoint(mobileonly) {
-          width: 100%;
-          // padding: 10px 10px;
-        }
-        &:after {
-          content: "";
-          width: 200px;
-          height: 10px;
-          background-color: $main-green;
-          display: block;
-          position: absolute;
-          bottom: -5px;
-          right: 5%;
-        }
-        .reference-icon {
-          width: 100px;
-          height: 100px;
-          background-color: $main-green;
-          border-radius: 50%;
-          position: absolute;
-          left: -40px;
-          @include breakpoint(phablet) {
-            left: auto;
-            top: -30px;
-            width: 70px;
-            height: 70px;
-          }
-        }
-        .referenceInnerBox {
-          width: 400px;
-          @include breakpoint(mobileonly) {
-            padding: 10px 10px;
-          }
-        }
+        height: 320px;
 
-        background-color: $secondary-grey;
+        .reference-content {
+          max-width: 800px;
+          padding: 20px 0 20px 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          width: 80%;
+          background-color: $secondary-grey;
+          @include breakpoint(phablet) {
+            width: 90%;
+          }
+          @include breakpoint(mobileonly) {
+            width: 100%;
+          }
+          &:after {
+            @include horizontal-green-bar;
+          }
+
+          .reference-icon-box {
+            width: 100px;
+            height: 100px;
+            background-color: $main-green;
+            border-radius: 50%;
+            position: absolute;
+            left: -40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include breakpoint(phablet) {
+              left: auto;
+              top: -30px;
+              width: 70px;
+              height: 70px;
+            }
+            .reference-icon-img {
+              width: 50px;
+              height: 50px;
+              @include breakpoint(phablet) {
+                width: 30px;
+                height: 30px;
+              }
+            }
+          }
+          .referenceInnerBox {
+            width: 400px;
+            @include breakpoint(mobileonly) {
+              padding: 10px 10px;
+            }
+            .nameSurname,
+            .position {
+              font-family: roboto-medium;
+              color: $secondary-text-grey;
+            }
+          }
+        }
       }
     }
 
@@ -736,18 +689,16 @@ body {
     background-color: $grey-light;
 
     &::after {
-      content: "Kontakt";
-
+      content: "Contact";
       @include light-background-subheader;
     }
     .section-header::before {
-      content: "Śmiało,";
+      content: "Go on !";
     }
     .form-content-container {
       display: flex;
       justify-content: center;
       align-items: center;
-      // flex-wrap: wrap;
       @include breakpoint(mobileonly) {
         flex-wrap: wrap;
       }
@@ -762,7 +713,7 @@ body {
         .details-box {
           display: flex;
           align-items: center;
-          img {
+          .contact-icon {
             padding-right: 20px;
 
             width: 20px;
@@ -777,21 +728,21 @@ body {
         width: 55%;
         min-width: 400px;
         position: relative;
-
+        @include breakpoint(mobileonly) {
+          width: auto;
+          min-width: 200px;
+        }
         &:before {
           content: "";
           height: 40px;
           width: 40px;
-          border: 10px solid #20845d;
+          border: 10px solid $main-green;
           position: absolute;
           bottom: -20px;
           left: -20px;
           border-radius: 50%;
         }
-        @include breakpoint(mobileonly) {
-          width: auto;
-          min-width: 200px;
-        }
+
         .spinning-circle-left,
         .spinning-circle-right {
           height: 20px;
@@ -804,7 +755,10 @@ body {
           top: -150px;
           right: 30px;
           animation: spin-left 4s linear infinite;
-
+          @include spin-left-animation;
+          @include breakpoint(largeDesktop) {
+            top: -200px;
+          }
           &:after {
             content: "";
             border: 2px solid $main-green;
@@ -818,19 +772,10 @@ body {
         }
         .spinning-circle-right {
           animation: spin-right 15s linear infinite;
+          @include spin-right-animation;
           &:after {
             width: 2px;
             height: 2px;
-          }
-        }
-        @keyframes spin-right {
-          100% {
-            transform: rotate(360deg);
-          }
-        }
-        @keyframes spin-left {
-          100% {
-            transform: rotate(-360deg);
           }
         }
         .phone-input {
@@ -845,23 +790,13 @@ body {
         padding: 25px 50px 50px 50px;
         position: relative;
         box-shadow: 0 1px 15px 0 $component-shadow;
-
-        // &:before {
-        //   content: "";
-        //   height: 40px;
-        //   width: 40px;
-        //   border: 10px solid #20845d;
-        //   position: absolute;
-        //   bottom: -20px;
-        //   left: -20px;
-        //   border-radius: 50%;
-        // }
         .form-subheader {
-          font-family: roboto-medium;
+          font-family: roboto-medium, sans-serif;
           color: $secondary-text-grey;
         }
         .label {
-          input[type="text"] {
+          input[type="text"],
+          .textarea {
             outline: none;
             border: none;
             padding-top: 25px;
@@ -875,7 +810,9 @@ body {
           @include breakpoint(mobileonly) {
             border-bottom: none;
           }
-          input[type="text"] {
+          input[type="text"],
+          input[type="email"],
+          input[type="number"] {
             outline: none;
             border: none;
             padding-top: 25px;

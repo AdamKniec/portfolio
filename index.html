@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="author" content="Adam Knieć" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Front-End Web Development" />
     <title>Document</title>
     <link rel="stylesheet" href="./css/scss/styles.css" />
     <link rel='icon' href='/assets/img/brand/favicon.png' type='image/x-icon'/ >
@@ -19,11 +22,11 @@
       <nav class="navbar">
         <img src="/assets/img/brand/main-logo.png" alt="logo" class="logo" />
         <ul class="navbar-list">
-          <li class="nav-item">O mnie</li>
-          <li class="nav-item">Umiejętności</li>
-          <li class="nav-item">Projekty</li>
-          <li class="nav-item">Referencje</li>
-          <li class="nav-item">Kontakt</li>
+          <li class="nav-item"><a href="#about-me"> About me</a></li>
+          <li class="nav-item"><a href="#skills">Skills</a></li>
+          <li class="nav-item"><a href="#projects">Projects</a></li>
+          <li class="nav-item"><a href="#references">References</a></li>
+          <li class="nav-item"><a href="#contact">Contact</a></li>
         </ul>
         <button class="hamburger">
           <span class="hamburger-line"></span>
@@ -36,20 +39,20 @@
         </div>
         <img
           src="./assets/img/background/background-portrait.png"
-          alt="background-portrait"
+          alt="portrait picture"
           class="background-portrait"
         />
       </div>
     </header>
-    <section class="about-me">
-      <h3 class="section-header">O mnie</h3>
+    <section id="about-me" class="about-me">
+      <h3 class="section-header">About me</h3>
       <div class="about-me-container">
         <div class="vertical-menu-container">
           <ul class="about-me-list">
-            <li class="list-item">Content</li>
-            <li class="list-item">Content</li>
-            <li class="list-item">Content</li>
-            <li class="list-item">Content</li>
+            <li class="list-item">About me</li>
+            <li class="list-item">Skills</li>
+            <li class="list-item">Experience</li>
+            <li class="list-item">Education</li>
           </ul>
         </div>
         <div class="description-box-container">
@@ -96,8 +99,8 @@
         </div>
       </div>
     </section>
-    <section class="technologies">
-      <h3 class="section-header bg-dark">Technologie</h3>
+    <section id="skills" class="technologies">
+      <h3 class="section-header bg-dark">Technologies</h3>
       <div class="technologies-container">
         <div class="card">
           <img
@@ -197,12 +200,16 @@
         </div>
       </div>
     </section>
-    <section class="projects">
-      <h3 class="section-header">Projekty</h3>
+    <section id="projects" class="projects">
+      <h3 class="section-header">Projects</h3>
       <div class="container">
         <div class="left">
           <div class="img-wrapper">
-            <img src="/assets/img/projects/laptop.png" alt="" class="" />
+            <img
+              src="/assets/img/projects/laptop.png"
+              alt="laptop image"
+              class="laptop-main"
+            />
           </div>
           <div class="project-title-bar">jakis tam content</div>
         </div>
@@ -214,7 +221,7 @@
                   src="/assets/img/projects/Iphone.png"
                   class="iphone-img
             "
-                  alt=""
+                  alt="iphone image"
                 />
               </div>
 
@@ -229,7 +236,7 @@
                   src="/assets/img/projects/Iphone.png"
                   class="iphone-img
               "
-                  alt=""
+                  alt="iphone image"
                 />
               </div>
 
@@ -241,8 +248,8 @@
           </div>
           <div class="right-bottom">
             <img
-              src="/assets/img/projects/laptop.png"
-              alt=""
+              src="/assets/img/projects/laptop-secondary.png"
+              alt="laptop image"
               class="laptop-img
             "
             />
@@ -256,47 +263,61 @@
         </div>
       </div>
     </section>
-    <section class="references">
-      <h3 class="section-header bg-dark">Referencje</h3>
+    <section id="references" class="references">
+      <h3 class="section-header bg-dark">References</h3>
       <div class="owl-carousel">
         <div class="reference-container">
           <div class="reference-content">
-            <div class="reference-icon">
-              <!-- <img src="./assets/img/ikona-react@2x.png" alt="" /> -->
+            <div class="reference-icon-box">
+              <img
+                src="/assets/img/recomendations/person-icon.png"
+                class="reference-icon-img"
+                alt="person icon"
+              />
             </div>
             <!-- //nazwa klasy do zmiany -->
             <div class="referenceInnerBox">
-              <span>Bolded something</span>
+              <p class="nameSurname">Marek Wagner (1/2)</p>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                nec erat mollis, varius est gravida, faucibus arcu. Cras ac
-                posuere velit.
+                I worked with Adam for over one year. From early beginning, he
+                showed great commitment and focus on self-development. His
+                flexible, solution-oriented mindset was very valuable factor in
+                our day to day work. He manifested great team-play, and will of
+                learning new things. It's worth also to mention friendly,
+                non-confrontational temper with specific sense of humor what
+                definitely enriched our team.
               </p>
-              <span>Bolded something</span>
+              <p class="position">Tech Service Manager</p>
             </div>
           </div>
         </div>
         <div class="reference-container">
           <div class="reference-content">
-            <div class="reference-icon">
-              <!-- <img src="./assets/img/ikona-react@2x.png" alt="" /> -->
+            <div class="reference-icon-box">
+              <img
+                src="/assets/img/recomendations/person-icon.png"
+                class="reference-icon-img"
+                alt="person icon"
+              />
             </div>
             <!-- //nazwa klasy do zmiany -->
             <div class="referenceInnerBox">
-              <span>Bolded something</span>
+              <p class="nameSurname">Marek Wagner (2/2)</p>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                nec erat mollis, varius est gravida, faucibus arcu. Cras ac
-                posuere velit.
+                To the last days of our cooperation, Adam manifested great sense
+                of ownership and will of help. I would recommend Adam as
+                reliable, skilled developer which is able to build very positive
+                relationships with other people, being also able to learn
+                quickly, and adapt to new environment.
               </p>
-              <span>Bolded something</span>
+              <span class="position">Tech Service Manager</span>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="contact">
-      <h3 class="section-header">Skontaktuj sie</h3>
+    <section id="contact" class="contact">
+      <h3 class="section-header">Contact me</h3>
       <div class="form-content-container">
         <div class="contact-details">
           <!-- // rozkminic ten kod pod katem semantyki -->
@@ -304,21 +325,24 @@
           <div class="details-box">
             <img
               src="/assets/img/contact-icons/phone-icon.png"
-              alt="phone-icon"
+              alt="phone icon"
+              class="contact-icon"
             />
             <p class="phone-number">604684140</p>
           </div>
           <div class="details-box">
             <img
               src="/assets/img/contact-icons/mail-icon.png"
-              alt="mail-icon"
+              alt="mail icon"
+              class="contact-icon"
             />
             <p class="email">adam.k.kniec@gmail.com</p>
           </div>
           <div class="details-box">
             <img
               src="/assets/img/contact-icons/pointer-icon.png"
-              alt="pointer-icon"
+              alt="pointer icon"
+              class="contact-icon"
             />
             <p class="address">Poznań</p>
           </div>
@@ -326,27 +350,50 @@
         <div class="contact-form">
           <div class="spinning-circle-left"></div>
           <div class="spinning-circle-right"></div>
-          <form class="form">
-            <p class="form-subheader">Wyslij wiadomosc</p>
+          <form
+            class="form"
+            action="https://formspree.io/adam.k.kniec@gmail.com"
+            method="POST"
+          >
+            <p class="form-subheader">Leave a message</p>
             <label class="label">
-              <input type="text" placeholder="Imie i nazwisko" />
+              <input
+                type="text"
+                placeholder="name and surname"
+                name="name"
+                required
+              />
             </label>
             <div class="labels-wrapper">
-              <label class="label-inline">
+              <label class="label-inline" for="email">
                 <input
-                  type="text"
-                  placeholder="Adres email"
+                  type="email"
+                  placeholder="email address"
                   class="mail-input"
+                  name="_replyto"
+                  id="email"
+                  required
                 />
               </label>
               <label class="label-inline">
-                <input type="text" placeholder="tel" class="phone-input" />
+                <input
+                  type="number"
+                  placeholder="phone number"
+                  class="phone-input"
+                  name="phone-number"
+                />
               </label>
             </div>
-            <label class="label">
-              <input type="text" placeholder="tresc wiadomosci" />
+            <label for="message" class="label">
+              <textarea
+                placeholder="put your message here..."
+                name="message"
+                class="textarea"
+                rows="3"
+              ></textarea>
             </label>
-            <button type="submit" class="submit">Wyslij</button>
+
+            <button type="submit" class="submit">Send!</button>
           </form>
         </div>
       </div>
@@ -357,5 +404,6 @@
     <script src="./lib/owl/docs_src/assets/vendors/jquery.min.js"></script>
     <script src="./lib/owl/docs/assets/owlcarousel/owl.carousel.min.js"></script>
     <script src="/scripts/scripts.js"></script>
+    <script src="/lib/zenscroll/zenscroll-min.js"></script>
   </body>
 </html>

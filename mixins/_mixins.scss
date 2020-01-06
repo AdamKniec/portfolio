@@ -25,6 +25,72 @@ $component-shadow-dark: rgba(75, 71, 71, 0.8);
   color: #484646;
   opacity: 0.7;
 }
+@mixin pulse-animation {
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 $main-green;
+    }
+    70% {
+      box-shadow: 0 0 0 100px rgba(204, 169, 44, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    }
+  }
+}
+@mixin spin-right-animation {
+  @keyframes spin-right {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+@mixin spin-left-animation {
+  @keyframes spin-left {
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+}
+@mixin fade-in-animation {
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+@mixin horizontal-green-bar {
+  content: "";
+  width: 200px;
+  height: 10px;
+  background-color: $main-green;
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  right: 5%;
+}
+@mixin circular-green-border(
+  $top: auto,
+  $right: auto,
+  $bottom: auto,
+  $left: auto
+) {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  position: absolute;
+  z-index: -1;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+  border-radius: 50%;
+  border: 10px solid $main-green;
+}
 
 // RWD breakpoint mixin
 @mixin breakpoint($point) {
