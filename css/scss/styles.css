@@ -144,6 +144,9 @@ body {
         @media (max-width: 1000px) {
           body .header .navbar .navbar-list .nav-item {
             margin-bottom: 70px; } }
+        @media (max-width: 1000px) and (orientation: landscape) {
+          body .header .navbar .navbar-list .nav-item {
+            margin-bottom: 30px; } }
         body .header .navbar .navbar-list .nav-item a {
           text-decoration: none;
           color: #ffffff; }
@@ -243,6 +246,9 @@ body {
         @media (max-width: 500px) {
           body .header .introContainer .intro {
             border-radius: 0; } }
+        @media (max-width: 1000px) and (orientation: landscape) {
+          body .header .introContainer .intro {
+            width: 650px; } }
         body .header .introContainer .intro .main-heading {
           font-size: 4rem;
           margin-bottom: 0; }
@@ -256,12 +262,21 @@ body {
               left: 10%;
               font-size: 5rem;
               top: 25%; } }
+          @media (max-width: 1000px) and (orientation: landscape) {
+            body .header .introContainer .intro .main-heading {
+              font-size: 3rem;
+              left: 20%;
+              top: 32%; } }
         body .header .introContainer .intro .profession-subtitle {
           font-size: 1.8rem; }
           @media (max-width: 800px) {
             body .header .introContainer .intro .profession-subtitle {
               position: absolute;
               bottom: 20%; } }
+          @media (max-width: 1000px) and (orientation: landscape) {
+            body .header .introContainer .intro .profession-subtitle {
+              bottom: auto;
+              left: 50%; } }
       body .header .introContainer .background-portrait {
         margin-left: 50%;
         height: 550px;
@@ -270,6 +285,10 @@ body {
           body .header .introContainer .background-portrait {
             height: 700px;
             width: 660px; } }
+        @media (max-width: 1000px) and (orientation: landscape) {
+          body .header .introContainer .background-portrait {
+            width: auto;
+            height: 100vh; } }
   body .about-me {
     position: relative;
     z-index: 2;
@@ -770,10 +789,6 @@ body {
           body .contact .form-content-container .contact-form .spinning-circle-right:after {
             width: 2px;
             height: 2px; }
-        body .contact .form-content-container .contact-form .phone-input {
-          width: auto; }
-        body .contact .form-content-container .contact-form .mail-input {
-          width: 60%; }
       body .contact .form-content-container .form {
         background-color: #ffffff;
         padding: 25px 50px 50px 50px;

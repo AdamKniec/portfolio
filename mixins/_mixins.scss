@@ -119,5 +119,9 @@ $component-shadow-dark: rgba(75, 71, 71, 0.8);
     @media (max-width: 500px) {
       @content;
     }
+  } @else if($point == phabletLandscape) {
+    @media (max-width: 1000px) and (orientation: landscape) {
+      @content;
+    }
   }
 }
