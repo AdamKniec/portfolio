@@ -357,40 +357,28 @@
           >
             <p class="form-subheader">Leave a message</p>
             <label class="label">
+              Name and surname
+              <input type="text" name="name" required />
+            </label>
+            <!-- <div class="labels-wrapper"> -->
+            <label for="email" class="label">
+              Email
               <input
-                type="text"
-                placeholder="name and surname"
-                name="name"
+                type="email"
+                class="mail-input"
+                name="_replyto"
+                id="email"
                 required
               />
             </label>
-            <div class="labels-wrapper">
-              <label class="label-inline" for="email">
-                <input
-                  type="email"
-                  placeholder="email address"
-                  class="mail-input"
-                  name="_replyto"
-                  id="email"
-                  required
-                />
-              </label>
-              <label class="label-inline">
-                <input
-                  type="number"
-                  placeholder="phone number"
-                  class="phone-input"
-                  name="phone-number"
-                />
-              </label>
-            </div>
+            <label class="label">
+              Phone number
+              <input type="number" class="phone-input" name="phone-number" />
+            </label>
+            <!-- </div> -->
             <label for="message" class="label">
-              <textarea
-                placeholder="put your message here..."
-                name="message"
-                class="textarea"
-                rows="3"
-              ></textarea>
+              Message
+              <textarea name="message" class="textarea" rows="3"></textarea>
             </label>
 
             <button type="submit" class="submit">Send!</button>

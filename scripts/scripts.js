@@ -3,9 +3,18 @@
   const aboutMeMenuWrapper = document.querySelector(".vertical-menu-container");
   const aboutMeMenuItems = document.querySelectorAll(".list-item");
   const descriptionBoxes = document.querySelectorAll(".description-box");
+
   const handleHover = e => {
     aboutMeMenuItems.forEach((menuItem, i) => {
       if (e.target === menuItem) {
+        //before doing anything - remove the "test" classes
+        aboutMeMenuItems.forEach(element => {
+          element.classList.remove("test");
+          element.classList.remove("primary");
+        });
+        menuItem.classList.add("primary");
+        changeNextAndPreviousItems(i);
+        //show appropriate box depending on the hovered menu item
         descriptionBoxes.forEach((box, index) => {
           box.classList.add("hide");
           if (i === index) {
@@ -14,7 +23,20 @@
         });
       }
     });
+
+    // based on the hovered menu index - manipulate the next and previous ones
+    function changeNextAndPreviousItems(i) {
+      if (aboutMeMenuItems[i - 1] && aboutMeMenuItems[i + 1]) {
+        aboutMeMenuItems[i - 1].classList.add("test");
+        aboutMeMenuItems[i + 1].classList.add("test");
+      } else if (!aboutMeMenuItems[i - 1]) {
+        aboutMeMenuItems[i + 1].classList.add("test");
+      } else if (!aboutMeMenuItems[i + 1]) {
+        aboutMeMenuItems[i - 1].classList.add("test");
+      }
+    }
   };
+
   aboutMeMenuWrapper.addEventListener("mouseover", handleHover);
 })();
 
@@ -75,7 +97,13 @@
       margin: 10,
       autoplay: true,
       autoplayTimeout: 3000,
-      autoplayHoverPause: true
+      autoplayHoverPause: true,
+      onInitialized: () => {
+        let navDotButtons = document.querySelectorAll(".owl-dot");
+        navDotButtons.forEach(button => {
+          button.setAttribute("aria-label", "switch-reference");
+        });
+      }
     });
   });
 })();
