@@ -158,7 +158,8 @@ body {
         right: 0;
         width: 20%;
         height: 100vh;
-        z-index: 999; }
+        z-index: 999;
+        padding: 10%; }
       body .header .navbar .hamburger {
         background: none;
         border: 0;
