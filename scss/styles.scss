@@ -276,7 +276,7 @@ body {
       &::after {
         content: "";
         position: absolute;
-        background-image: url("/assets/img/background/background-icons.png");
+        background-image: url("./assets/img/background/background-icons.png");
         height: 330px;
         width: 500px;
         background-repeat: no-repeat;
