@@ -13,7 +13,7 @@
           element.classList.remove("primary");
         });
         menuItem.classList.add("primary");
-        changeNextAndPreviousItems(i);
+        resizeNextAndPreviousItems(i);
         showParticularBox(i);
       }
     });
@@ -27,7 +27,7 @@
       });
     }
     // based on the hovered menu index - manipulate the next and previous ones
-    function changeNextAndPreviousItems(i) {
+    function resizeNextAndPreviousItems(i) {
       if (aboutMeMenuItems[i - 1] && aboutMeMenuItems[i + 1]) {
         aboutMeMenuItems[i - 1].classList.add("test");
         aboutMeMenuItems[i + 1].classList.add("test");
