@@ -14,16 +14,18 @@
         });
         menuItem.classList.add("primary");
         changeNextAndPreviousItems(i);
-        //show appropriate box depending on the hovered menu item
-        descriptionBoxes.forEach((box, index) => {
-          box.classList.add("hide");
-          if (i === index) {
-            box.classList.remove("hide");
-          }
-        });
+        showParticularBox(i);
       }
     });
-
+    // show particular box depending on the hovered item
+    function showParticularBox(i) {
+      descriptionBoxes.forEach((box, index) => {
+        box.classList.add("hide");
+        if (i === index) {
+          box.classList.remove("hide");
+        }
+      });
+    }
     // based on the hovered menu index - manipulate the next and previous ones
     function changeNextAndPreviousItems(i) {
       if (aboutMeMenuItems[i - 1] && aboutMeMenuItems[i + 1]) {
