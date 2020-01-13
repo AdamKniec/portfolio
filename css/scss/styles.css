@@ -344,7 +344,7 @@ body {
         transition: transform 0.2s;
         transform: scale(1.6);
         font-family: roboto-medium; }
-      body .about-me .about-me-container .test {
+      body .about-me .about-me-container .secondary {
         transform: scale(1.3); }
     body .about-me .description-box-container {
       position: relative;

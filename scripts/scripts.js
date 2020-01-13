@@ -9,15 +9,14 @@
       if (e.target === menuItem) {
         //before doing anything - remove the "test" classes
         aboutMeMenuItems.forEach(element => {
-          element.classList.remove("test");
+          element.classList.remove("secondary");
           element.classList.remove("primary");
         });
         menuItem.classList.add("primary");
-        resizeNextAndPreviousItems(i);
+        changeNextAndPreviousItems(i);
         showParticularBox(i);
       }
     });
-    // show particular box depending on the hovered item
     function showParticularBox(i) {
       descriptionBoxes.forEach((box, index) => {
         box.classList.add("hide");
@@ -27,14 +26,14 @@
       });
     }
     // based on the hovered menu index - manipulate the next and previous ones
-    function resizeNextAndPreviousItems(i) {
+    function changeNextAndPreviousItems(i) {
       if (aboutMeMenuItems[i - 1] && aboutMeMenuItems[i + 1]) {
-        aboutMeMenuItems[i - 1].classList.add("test");
-        aboutMeMenuItems[i + 1].classList.add("test");
+        aboutMeMenuItems[i - 1].classList.add("secondary");
+        aboutMeMenuItems[i + 1].classList.add("secondary");
       } else if (!aboutMeMenuItems[i - 1]) {
-        aboutMeMenuItems[i + 1].classList.add("test");
+        aboutMeMenuItems[i + 1].classList.add("secondary");
       } else if (!aboutMeMenuItems[i + 1]) {
-        aboutMeMenuItems[i - 1].classList.add("test");
+        aboutMeMenuItems[i - 1].classList.add("secondary");
       }
     }
   };
