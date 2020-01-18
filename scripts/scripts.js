@@ -7,7 +7,7 @@
   const handleHover = e => {
     aboutMeMenuItems.forEach((menuItem, i) => {
       if (e.target === menuItem) {
-        //before doing anything - remove the "test" classes
+        //before doing anything - remove the "secondary" and "primary" classes
         aboutMeMenuItems.forEach(element => {
           element.classList.remove("secondary");
           element.classList.remove("primary");
@@ -37,7 +37,6 @@
       }
     }
   };
-
   aboutMeMenuWrapper.addEventListener("mouseover", handleHover);
 })();
 
@@ -106,5 +105,15 @@
         });
       }
     });
+  });
+})();
+// loader handler
+(function() {
+  const overlay = document.querySelector(".overlay");
+  window.addEventListener("load", () => {
+    overlay.classList.add("hidden");
+  });
+  overlay.addEventListener("animationend", () => {
+    overlay.style.display = "none";
   });
 })();

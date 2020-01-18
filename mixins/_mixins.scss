@@ -62,6 +62,16 @@ $component-shadow-dark: rgba(75, 71, 71, 0.8);
     }
   }
 }
+@mixin fade-out-animation {
+  @keyframes fadeout {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+}
 @mixin horizontal-green-bar {
   content: "";
   width: 200px;

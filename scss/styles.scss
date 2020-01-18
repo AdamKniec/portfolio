@@ -81,6 +81,100 @@ body {
     height: auto;
     overflow: hidden;
 
+    .overlay {
+      // trzebaokombinowac z keyframes itp i wtedy chwycic w js animation end
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      z-index: 200;
+      background-color: $black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 1;
+      // animation: fadeout 1s;
+      // @include fade-out-animation;
+      .sk-cube-grid {
+        width: 100px;
+        height: 100px;
+        margin: 100px auto;
+        .sk-cube {
+          width: 33%;
+          height: 33%;
+          background-color: #333; // dorobix
+          float: left;
+          -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+          animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+          .sk-cube1 {
+            -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s;
+          }
+          .sk-cube2 {
+            -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+          }
+          .sk-cube3 {
+            -webkit-animation-delay: 0.4s;
+            animation-delay: 0.4s;
+          }
+          .sk-cube4 {
+            -webkit-animation-delay: 0.1s;
+            animation-delay: 0.1s;
+          }
+          .sk-cube5 {
+            -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s;
+          }
+          .sk-cube6 {
+            -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+          }
+          .sk-cube7 {
+            -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+          }
+          .sk-cube8 {
+            -webkit-animation-delay: 0.1s;
+            animation-delay: 0.1s;
+          }
+          .sk-cube9 {
+            -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s;
+          }
+        }
+      }
+    }
+
+    @-webkit-keyframes sk-cubeGridScaleDelay {
+      0%,
+      70%,
+      100% {
+        -webkit-transform: scale3D(1, 1, 1);
+        transform: scale3D(1, 1, 1);
+      }
+      35% {
+        -webkit-transform: scale3D(0, 0, 1);
+        transform: scale3D(0, 0, 1);
+      }
+    }
+
+    @keyframes sk-cubeGridScaleDelay {
+      0%,
+      70%,
+      100% {
+        -webkit-transform: scale3D(1, 1, 1);
+        transform: scale3D(1, 1, 1);
+      }
+      35% {
+        -webkit-transform: scale3D(0, 0, 1);
+        transform: scale3D(0, 0, 1);
+      }
+    }
+    .hidden {
+      animation: fadeout 1s;
+      @include fade-out-animation;
+      // z-index: -1;
+    }
     .navbar {
       display: flex;
       justify-content: flex-end;
@@ -364,6 +458,10 @@ body {
         &:after {
           @include horizontal-green-bar;
         }
+        .description-box-heading {
+          font-family: roboto-medium, sans-serif;
+          color: $secondary-text-grey;
+        }
         .description-box-content {
           list-style-type: none;
           padding: 0;
@@ -462,7 +560,7 @@ body {
         flex-wrap: wrap;
       }
       // common styles
-      .left,
+      .first-column,
       .project-inner-box,
       .right-bottom {
         background-color: $white;
@@ -491,7 +589,7 @@ body {
         }
       }
       // common styles end
-      .left {
+      .first-column {
         min-width: 300px;
         display: flex;
         justify-content: center;
@@ -529,7 +627,7 @@ body {
           align-items: center;
         }
       }
-      .right {
+      .second-column {
         height: 290px;
         @include breakpoint(mobileonly) {
           width: 100%;
@@ -537,7 +635,7 @@ body {
         @include breakpoint(smallMobile) {
           height: auto;
         }
-        .right-top {
+        .second-top {
           display: flex;
           height: 50%;
           @include breakpoint(smallMobile) {
@@ -731,6 +829,10 @@ body {
         }
         @include breakpoint(smallMobile) {
           margin-right: auto;
+        }
+        .nameSurname {
+          font-family: roboto-medium, sans-serif;
+          color: $secondary-text-grey;
         }
         .details-box {
           display: flex;
