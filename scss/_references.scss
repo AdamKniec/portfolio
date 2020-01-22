@@ -1,0 +1,97 @@
+.references {
+  background-color: $background-dark;
+  &::after {
+    content: "References";
+    @include dark-background-subheader;
+  }
+  .section-header::before {
+    @include greenHeaderElement("Received");
+  }
+
+  .owl-item {
+    @include breakpoint(mobileonly) {
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+    .reference-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 360px;
+
+      .reference-content {
+        max-width: 800px;
+        padding: 20px 0 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 80%;
+        background-color: $secondary-grey;
+        @include breakpoint(phablet) {
+          width: 90%;
+        }
+        @include breakpoint(mobileonly) {
+          width: 100%;
+        }
+        &:after {
+          @include horizontal-green-bar;
+        }
+
+        .reference-icon-box {
+          width: 100px;
+          height: 100px;
+          background-color: $main-green;
+          border-radius: 50%;
+          position: absolute;
+          left: -40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          @include breakpoint(phablet) {
+            left: auto;
+            top: -30px;
+            width: 70px;
+            height: 70px;
+          }
+          .reference-icon-img {
+            width: 45px;
+            height: 50px;
+            @include breakpoint(phablet) {
+              width: 30px;
+              height: 30px;
+            }
+          }
+        }
+        .referenceInnerBox {
+          width: 400px;
+          @include breakpoint(mobileonly) {
+            padding: 10px 10px;
+          }
+          .nameSurname,
+          .position {
+            font-family: roboto-medium;
+            color: $secondary-text-grey;
+          }
+        }
+      }
+    }
+  }
+
+  .owl-dots {
+    text-align: center;
+    padding-top: 15px;
+    button.owl-dot {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      display: inline-block;
+      background: $grey-light;
+      margin: 0 3px;
+
+      &.active {
+        background-color: $main-green;
+      }
+    }
+  }
+}

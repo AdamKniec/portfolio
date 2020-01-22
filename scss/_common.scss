@@ -1,0 +1,59 @@
+//common styles applied to every section
+@import "./mixins/mixins";
+@font-face {
+  font-family: Roboto;
+  src: url("/assets/fonts/Roboto-Thin.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: Roboto-medium;
+  src: url("/assets/fonts/Roboto-Medium.ttf");
+  font-weight: bold;
+}
+body {
+  background-color: $black;
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  .about-me,
+  .technologies,
+  .projects,
+  .references,
+  .contact {
+    padding: 50px 100px 0 100px;
+    @include breakpoint(largeDesktop) {
+      padding-left: 25%;
+      padding-right: 25%;
+    }
+    @include breakpoint(mobileonly) {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+    .section-header {
+      margin: 0;
+      padding: 0;
+      font-size: 2rem;
+      position: relative;
+      padding-top: 50px;
+      padding-bottom: 25px;
+      font-family: roboto-medium, sans-serif;
+      color: $secondary-text-grey;
+      @include breakpoint(mobileonly) {
+        margin-left: 5%;
+      }
+    }
+
+    &:after {
+      font-family: roboto-medium, sans-serif;
+      @include breakpoint(laptop) {
+        font-size: 6rem;
+      }
+      @include breakpoint(phablet) {
+        font-size: 4rem;
+      }
+      @include breakpoint(smallMobile) {
+        font-size: 3rem;
+      }
+    }
+  }
+}

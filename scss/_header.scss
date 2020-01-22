@@ -1,0 +1,237 @@
+@import "../mixins/mixins";
+.header {
+  background-color: $header-black;
+  height: auto;
+  overflow: hidden;
+  .overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 200;
+    background-color: $black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    .sk-cube-grid {
+      width: 100px;
+      height: 100px;
+      margin: 100px auto;
+      @include cubeGridLoaderAnimation;
+      .sk-cube {
+        width: 33%;
+        height: 33%;
+        background-color: $main-green;
+        float: left;
+        animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+        .sk-cube1,
+        .sk-cube5,
+        .sk-cube9 {
+          animation-delay: 0.2s;
+        }
+        .sk-cube2,
+        .sk-cube6 {
+          animation-delay: 0.3s;
+        }
+        .sk-cube3 {
+          animation-delay: 0.4s;
+        }
+        .sk-cube4,
+        .sk-cube8 {
+          animation-delay: 0.1s;
+        }
+        .sk-cube7 {
+          animation-delay: 0s;
+        }
+      }
+    }
+  }
+
+  .hidden {
+    animation: fadeout 1s;
+    @include fade-out-animation;
+  }
+  .navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+    z-index: 1;
+    transition: all 0.2s;
+    .headerAnchor {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      transform: translateX(-100px);
+      left: 0;
+      .logo {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    .navbar-list {
+      display: flex;
+      justify-content: flex-end;
+      justify-content: space-around;
+      margin: 0;
+      width: 600px;
+      color: $white;
+      list-style-type: none;
+      @include breakpoint(phablet) {
+        display: none;
+        justify-content: normal;
+        padding-top: 5%;
+      }
+      .nav-item {
+        @include breakpoint(phablet) {
+          margin-bottom: 70px;
+        }
+        a {
+          text-decoration: none;
+          color: $white;
+          &:hover {
+            border-bottom: 2px solid $main-green;
+          }
+        }
+      }
+    }
+    .mobile {
+      display: flex;
+      position: absolute;
+      background-color: $black;
+      flex-direction: column;
+      top: 0;
+      right: 0;
+      width: 20%;
+      height: 100vh;
+      z-index: 999;
+      padding: 10%;
+    }
+    .hamburger {
+      background: none;
+      border: 0;
+      width: 40px;
+      height: 40px;
+      position: relative;
+      margin-right: 30px;
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+      display: none;
+      @include breakpoint(phablet) {
+        display: flex;
+      }
+      @include breakpoint(smallMobile) {
+        z-index: 9;
+      }
+      .hamburger-line {
+        border-bottom: 1px solid $white;
+        width: 20px;
+        color: $white;
+        background-color: $white;
+        position: absolute;
+        &::before,
+        &::after {
+          content: "";
+          width: 100%;
+          background-color: $white;
+          position: absolute;
+          height: 1px;
+          display: block;
+        }
+        &::before {
+          top: -5px;
+        }
+        &::after {
+          top: 5px;
+        }
+      }
+    }
+  }
+  // helper navbar class
+  .sticky {
+    position: fixed;
+    width: 100%;
+    background-color: $black;
+    z-index: 100;
+    opacity: 0.9;
+    .headerAnchor {
+      transform: translateX(50px);
+      transition: transform 0.2s;
+    }
+  }
+  .introContainer {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    .intro {
+      position: absolute;
+      left: -15px;
+      width: 800px;
+      height: 800px;
+      margin: 30px auto auto -200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: $white;
+      background-color: $main-green;
+      border-radius: 100%;
+      animation: pulse 2s infinite;
+      @include pulse-animation;
+      @include breakpoint(largeDesktop) {
+        width: 1200px;
+        height: 1200px;
+        margin-left: -250px;
+      }
+      @include breakpoint(phablet) {
+        background-color: $main-green-opacity;
+        animation: none;
+      }
+      @include breakpoint(smallMobile) {
+        border-radius: 0;
+      }
+      .main-heading {
+        font-size: 4rem;
+        margin-bottom: 0;
+        @include breakpoint(largeDesktop) {
+          font-size: 5rem;
+        }
+        @include breakpoint(mobileonly) {
+          transform: rotate(90deg);
+          position: absolute;
+          left: 10%;
+          font-size: 5rem;
+          top: 25%;
+        }
+        @include breakpoint(smallMobile) {
+          left: 8%;
+        }
+      }
+      .profession-subtitle {
+        font-size: 1.8rem;
+        @include breakpoint(smallMobile) {
+          bottom: 22%;
+          left: 30%;
+        }
+        @include breakpoint(mobileonly) {
+          position: absolute;
+          bottom: 22%;
+        }
+      }
+    }
+
+    .background-portrait {
+      margin-left: 50%;
+      height: 550px;
+      width: 515px;
+      @include breakpoint(largeDesktop) {
+        height: 700px;
+        width: 660px;
+      }
+    }
+  }
+}

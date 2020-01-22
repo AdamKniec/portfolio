@@ -72,6 +72,31 @@ $component-shadow-dark: rgba(75, 71, 71, 0.8);
     }
   }
 }
+@mixin cubeGridLoaderAnimation {
+  @keyframes sk-cubeGridScaleDelay {
+    0%,
+    70%,
+    100% {
+      -webkit-transform: scale3D(1, 1, 1);
+      transform: scale3D(1, 1, 1);
+    }
+    35% {
+      -webkit-transform: scale3D(0, 0, 1);
+      transform: scale3D(0, 0, 1);
+    }
+  }
+}
+@mixin greenHeaderElement($text) {
+  content: $text;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 25px;
+  background: $main-green;
+  padding-left: 25px;
+  padding-right: 60px;
+  left: -25px;
+  color: $white;
+}
 @mixin horizontal-green-bar {
   content: "";
   width: 200px;
@@ -105,12 +130,7 @@ $component-shadow-dark: rgba(75, 71, 71, 0.8);
 // RWD breakpoint mixin
 @mixin breakpoint($point) {
   @if $point == largeDesktop {
-    @media (min-width: 90em) {
-      @content;
-    }
-  }
-  @if $point == desktop {
-    @media (min-width: 70em) {
+    @media (min-width: 1440px) {
       @content;
     }
   } @else if $point == laptop {
@@ -127,10 +147,6 @@ $component-shadow-dark: rgba(75, 71, 71, 0.8);
     }
   } @else if $point == smallMobile {
     @media (max-width: 500px) {
-      @content;
-    }
-  } @else if($point == phabletLandscape) {
-    @media (max-width: 1000px) and (orientation: landscape) {
       @content;
     }
   }

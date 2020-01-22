@@ -1,0 +1,134 @@
+.contact {
+  background-color: $grey-light;
+
+  &::after {
+    content: "Contact";
+    @include light-background-subheader;
+  }
+  .section-header::before {
+    @include greenHeaderElement("Go on!");
+  }
+  .form-content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include breakpoint(mobileonly) {
+      flex-wrap: wrap;
+    }
+    .contact-details {
+      margin-right: 100px;
+      @include breakpoint(mobileonly) {
+        margin-bottom: 50px;
+      }
+      @include breakpoint(smallMobile) {
+        margin-right: auto;
+      }
+      .nameSurname {
+        font-family: roboto-medium, sans-serif;
+        color: $secondary-text-grey;
+      }
+      .details-box {
+        display: flex;
+        align-items: center;
+        .contact-icon {
+          padding-right: 20px;
+
+          width: 20px;
+        }
+        p {
+          margin: 0;
+          padding: 10px;
+        }
+      }
+    }
+    .contact-form {
+      width: 55%;
+      min-width: 400px;
+      position: relative;
+      @include breakpoint(mobileonly) {
+        width: auto;
+        min-width: 200px;
+      }
+      &:before {
+        content: "";
+        height: 40px;
+        width: 40px;
+        border: 10px solid $main-green;
+        position: absolute;
+        bottom: -20px;
+        left: -20px;
+        border-radius: 50%;
+      }
+
+      .spinning-circle-left,
+      .spinning-circle-right {
+        height: 20px;
+        width: 20px;
+        border: 5px solid $main-green;
+        border-radius: 50%;
+        margin: 0 auto;
+        margin-top: 20%;
+        position: absolute;
+        top: -150px;
+        right: 30px;
+        animation: spin-left 4s linear infinite;
+        @include spin-left-animation;
+        &:after {
+          content: "";
+          border: 2px solid $main-green;
+          position: absolute;
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          margin-top: -50px;
+          margin-left: 20px;
+        }
+      }
+      .spinning-circle-right {
+        animation: spin-right 15s linear infinite;
+        @include spin-right-animation;
+        &:after {
+          width: 2px;
+          height: 2px;
+        }
+      }
+    }
+    .form {
+      background-color: $white;
+      padding: 25px 50px 50px 50px;
+      position: relative;
+      box-shadow: 0 1px 15px 0 $component-shadow;
+      .form-subheader {
+        font-family: roboto-medium, sans-serif;
+        color: $secondary-text-grey;
+      }
+      .label {
+        display: block;
+        padding-top: 10px;
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        .textarea {
+          outline: none;
+          border: none;
+          font-family: roboto;
+          font-size: 16px;
+          border-bottom: 1px solid $black;
+          width: 100%;
+          color: $secondary-text-grey;
+        }
+      }
+      .submit {
+        display: block;
+        position: absolute;
+        bottom: -25px;
+        right: 10%;
+        color: $white;
+        background-color: $main-green;
+        width: 150px;
+        height: 50px;
+        font-size: 18px;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.footer {
+  height: 100px;
+  background-color: $background-dark;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  color: $white;
+
+  .footer-content {
+    margin: 0;
+    vertical-align: center;
+  }
+}

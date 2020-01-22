@@ -1,0 +1,167 @@
+.projects {
+  background-color: $grey-light;
+  &::after {
+    content: "Projekty";
+    @include light-background-subheader;
+  }
+  .section-header::before {
+    @include greenHeaderElement("Some of my");
+  }
+
+  .container {
+    display: flex;
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+    @include breakpoint(mobileonly) {
+      flex-wrap: wrap;
+    }
+    // common styles
+    .first-column,
+    .project-inner-box,
+    .right-bottom {
+      background-color: $white;
+      box-shadow: 0 1px 15px 0 $component-shadow;
+      transition: 0.2s;
+      &:hover {
+        transform: scale(1.1);
+        transition: 0.2s;
+        z-index: 2;
+        box-shadow: 0 1px 15px 0 $component-shadow-dark;
+
+        @include breakpoint(smallMobile) {
+          transform: none;
+        }
+      }
+      .title {
+        margin-bottom: 0;
+        font-family: roboto-medium, sans-serif;
+        color: $secondary-text-grey;
+        cursor: pointer;
+      }
+      .project-description {
+        margin-bottom: 0;
+      }
+      .tech-set {
+        color: $main-green;
+      }
+    }
+    // common styles end
+    .first-column {
+      min-width: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-right: 10px;
+      height: 300px;
+      position: relative;
+      @include breakpoint(mobileonly) {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+      .img-wrapper {
+        position: relative;
+        z-index: 10;
+        .laptop-main {
+          height: 170px;
+        }
+        &::after {
+          @include circular-green-border(-10px, auto, auto, -15px);
+        }
+      }
+
+      .project-title-bar {
+        background-color: $main-green;
+        color: $white;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        height: 50px;
+        vertical-align: middle;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .second-column {
+      height: 290px;
+      @include breakpoint(mobileonly) {
+        width: 100%;
+      }
+      @include breakpoint(smallMobile) {
+        height: auto;
+      }
+      .second-top {
+        display: flex;
+        height: 50%;
+        @include breakpoint(smallMobile) {
+          display: block;
+          height: auto;
+        }
+        .project-inner-box {
+          display: flex;
+          width: 220px;
+          height: 145px;
+          justify-content: center;
+          align-items: center;
+          @include breakpoint(mobileonly) {
+            width: 50%;
+          }
+          @include breakpoint(smallMobile) {
+            width: 100%;
+            justify-content: flex-start;
+            padding-left: 25px;
+            box-sizing: border-box;
+          }
+          &:nth-child(1) {
+            margin-right: 10px;
+            @include breakpoint(smallMobile) {
+              margin-bottom: 10px;
+            }
+          }
+          &:nth-child(2) {
+            .img-wrapper:after {
+              @include circular-green-border(auto, 5px, -10px, auto);
+            }
+          }
+          .img-wrapper {
+            position: relative;
+            z-index: 10;
+            .iphone-img {
+              height: 100px;
+              margin-right: 20px;
+            }
+          }
+
+          .project-example {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+          }
+        }
+      }
+      .right-bottom {
+        height: 50%;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        height: 145px;
+
+        .laptop-img {
+          height: 120px;
+          padding-left: 25px;
+          margin-right: 20px;
+        }
+        .project-example {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          text-align: left;
+        }
+      }
+    }
+  }
+}

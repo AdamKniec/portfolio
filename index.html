@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="author" content="Adam Knieć" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Front-End Web Development" />
+    <meta name="description" content="Front-End Web development services" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/scss/styles.css" />
+    <link rel="stylesheet" href="./css/combined.css" />
     <link rel='icon' href='/assets/img/brand/favicon.png' type='image/x-icon'/ >
 
     <link rel="stylesheet" href="./lib/owl/dist/assets/owl.carousel.min.css" />
@@ -18,7 +18,7 @@
     />
   </head>
   <body>
-    <header class="header">
+    <header class="header" id="header">
       <div class="overlay">
         <div class="sk-cube-grid">
           <div class="sk-cube sk-cube1"></div>
@@ -34,7 +34,10 @@
       </div>
 
       <nav class="navbar">
-        <img src="./assets/img/brand/main-logo.png" alt="logo" class="logo" />
+        <a href="#header" class="headerAnchor"
+          ><img src="./assets/img/brand/main-logo.png" alt="logo" class="logo"
+        /></a>
+
         <ul class="navbar-list">
           <li class="nav-item"><a href="#about-me"> About me</a></li>
           <li class="nav-item"><a href="#skills">Skills</a></li>
@@ -71,44 +74,69 @@
         </div>
         <div class="description-box-container">
           <div class="description-box ">
-            <p class="description-box-heading">Description box Heading</p>
+            <p class="description-box-heading">About me</p>
             <ul class="description-box-content">
-              <li class="description-list-item">content pierwszy</li>
-              <li class="description-list-item">content pierwszy</li>
-              <li class="description-list-item">content pierwszy</li>
-              <li class="description-list-item">content pierwszy</li>
+              <li class="description-list-item">
+                Self taught software Engineer
+              </li>
+              <li class="description-list-item">
+                Poznań University of Technology graduate
+              </li>
+              <li class="description-list-item">
+                Front-End related technologies enthusiast
+              </li>
+              <li class="description-list-item">Gym lover</li>
             </ul>
-            <p>description box subbheading</p>
+            <p>and it's just the begining...</p>
           </div>
           <div class="description-box ">
-            <p class="description-box-heading">Description box Heading</p>
+            <p class="description-box-heading">A little bit about my skills</p>
             <ul class="description-box-content">
-              <li class="description-list-item">content Drugi</li>
-              <li class="description-list-item">content Drugi</li>
-              <li class="description-list-item">content Drugi</li>
-              <li class="description-list-item">content Drugi</li>
+              <li class="description-list-item">
+                Most of my technical skills are Front-End related. More details
+                <a href="#skills" class="skills-info">here </a> and
+                <a
+                  href="https://www.linkedin.com/in/adamkniec/"
+                  class="skills-info"
+                  >here</a
+                >
+              </li>
+              <li class="description-list-item">
+                Deep Agile understanding. I know how to be an Agile team-player
+              </li>
+              <li class="description-list-item">
+                My attitude is always business and customer oriented
+              </li>
+              <li class="description-list-item">
+                Problem solving, marketing and public speaking skills
+              </li>
             </ul>
-            <p>description box subbheading</p>
+            <p>If you need more info - scroll down :)</p>
           </div>
           <div class="description-box ">
-            <p class="description-box-heading">Description box Heading</p>
-            <ul class="description-box-content">
-              <li class="description-list-item">content Trzeci</li>
-              <li class="description-list-item">content Trzeci</li>
-              <li class="description-list-item">content Trzeci</li>
-              <li class="description-list-item">content Trzeci</li>
-            </ul>
-            <p>description box subbheading</p>
+            <p class="description-box-heading">My experience</p>
+            <p>
+              I've started my IT journey as a Salesforce.com software tester.
+              After a year, I've decided to change my role. I got a job as a
+              Front-End Developer in AEM platform. Since that day - I work as a
+              developer in really demanding markets, constantly growing and
+              improving my tech skillset
+            </p>
+            <p>Experienced in BigPharma and FinTech markets</p>
           </div>
           <div class="description-box ">
-            <p class="description-box-heading">Description box Heading</p>
+            <p class="description-box-heading">I can help you with:</p>
             <ul class="description-box-content">
-              <li class="description-list-item">content Czwarty</li>
-              <li class="description-list-item">content Czwarty</li>
-              <li class="description-list-item">content Czwarty</li>
-              <li class="description-list-item">content Czwarty</li>
+              <li class="description-list-item">
+                Website creation. From design to live deployment
+              </li>
+              <li class="description-list-item">SEO optimisation</li>
+              <li class="description-list-item">
+                Front-End development for Your company
+              </li>
+              <li class="description-list-item">Small projects leadership</li>
             </ul>
-            <p>description box subbheading</p>
+            <p>Feel free to contact me !</p>
           </div>
         </div>
       </div>
@@ -225,7 +253,7 @@
               class="laptop-main"
             />
           </div>
-          <div class="project-title-bar">jakis tam content</div>
+          <div class="project-title-bar">Portfolio</div>
         </div>
         <div class="second-column">
           <div class="second-top">
@@ -240,8 +268,8 @@
               </div>
 
               <div class="project-example">
-                <p class="title">KGRP</p>
-                <p class="tech-set">UX, JS, React</p>
+                <p class="title">Soon...</p>
+                <p class="tech-set">Stay tuned</p>
               </div>
             </div>
             <div class="project-inner-box">
@@ -255,8 +283,12 @@
               </div>
 
               <div class="project-example">
-                <p class="title">KGRP</p>
-                <p class="tech-set">UX, JS, React</p>
+                <a
+                  href="https://adamkniec.github.io/newRegosteel/index.html"
+                  class="title"
+                  >Regosteel</a
+                >
+                <p class="tech-set">JS, HTML, SCSS</p>
               </div>
             </div>
           </div>
@@ -269,9 +301,11 @@
             />
 
             <div class="project-example">
-              <p class="title">KGRP</p>
-              <p class="project-description">Lorem cośtam</p>
-              <p class="tech-set">UX, JS, React</p>
+              <a href="https://adamkniec.github.io/kancelaria/" class="title"
+                >KGRP</a
+              >
+              <p class="project-description">Law firm</p>
+              <p class="tech-set">SCSS, JS</p>
             </div>
           </div>
         </div>
@@ -393,7 +427,7 @@
       </div>
     </section>
     <footer class="footer">
-      <p class="footer-content">zakodowane przez Adam Kniec</p>
+      <p class="footer-content">Created by Adam Knieć</p>
     </footer>
     <script src="./lib/owl/docs_src/assets/vendors/jquery.min.js"></script>
     <script src="./lib/owl/docs/assets/owlcarousel/owl.carousel.min.js"></script>

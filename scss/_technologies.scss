@@ -1,0 +1,55 @@
+.technologies {
+  background-color: $background-dark;
+  &::after {
+    content: "Technologies";
+    @include dark-background-subheader;
+  }
+  .section-header::before {
+    @include greenHeaderElement("Used");
+  }
+  .technologies-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 700px;
+    margin: 0 auto;
+    @include breakpoint(phablet) {
+      max-width: 560px;
+    }
+    .card {
+      text-align: center;
+      border-radius: 10%;
+      transition: 0.5s;
+      &:hover {
+        background: $main-green;
+        transition: 0.2s;
+        transform: scale(1.1);
+      }
+      &:hover .tech-name {
+        opacity: 1;
+      }
+      .tech-icon {
+        padding: 35px 35px 5px 35px;
+        width: 65px;
+        height: 55px;
+
+        @include breakpoint(phablet) {
+          width: 60px;
+          height: 50px;
+        }
+        @include breakpoint(mobileonly) {
+          padding: 40px 30px 0px 30px;
+          width: 45px;
+          height: 40px;
+        }
+      }
+      .tech-name {
+        max-height: 0;
+        opacity: 0;
+        padding-bottom: 15px;
+        margin-top: 0;
+      }
+    }
+  }
+}
