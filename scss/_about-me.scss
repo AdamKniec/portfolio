@@ -70,9 +70,10 @@
       width: 100%;
     }
     .description-box {
+      height: 180px;
       display: block;
       background-color: $white;
-      padding: 10px 0 10px 40px;
+      padding: 10px 40px 10px 40px;
       box-shadow: 0 1px 15px 0 $component-shadow;
       z-index: 233;
       position: relative;
@@ -83,7 +84,7 @@
       }
       @include breakpoint(phablet) {
         margin-bottom: 20px;
-        padding: 10px 20px 10px 20px;
+        padding: 10px 20px 20px 20px;
       }
 
       &:after {
@@ -97,9 +98,6 @@
         list-style-type: none;
         padding: 0;
         .description-list-item {
-          display: flex;
-          align-items: center;
-          text-align: left;
           @include breakpoint(phablet) {
             display: block;
           }
@@ -110,7 +108,7 @@
             border-radius: 50%;
             background: $main-green;
             display: inline-block;
-            margin: 0 10px;
+            margin: 3px 10px;
           }
           .skills-info {
             color: $main-green;

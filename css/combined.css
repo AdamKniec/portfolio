@@ -293,9 +293,10 @@
       .about-me .description-box-container {
         width: 100%; } }
     .about-me .description-box-container .description-box {
+      height: 180px;
       display: block;
       background-color: #ffffff;
-      padding: 10px 0 10px 40px;
+      padding: 10px 40px 10px 40px;
       box-shadow: 0 1px 15px 0 rgba(112, 112, 112, 0.5);
       z-index: 233;
       position: relative;
@@ -312,7 +313,7 @@
       @media (max-width: 1000px) {
         .about-me .description-box-container .description-box {
           margin-bottom: 20px;
-          padding: 10px 20px 10px 20px; } }
+          padding: 10px 20px 20px 20px; } }
       .about-me .description-box-container .description-box:after {
         content: "";
         width: 200px;
@@ -328,23 +329,19 @@
       .about-me .description-box-container .description-box .description-box-content {
         list-style-type: none;
         padding: 0; }
-        .about-me .description-box-container .description-box .description-box-content .description-list-item {
-          display: flex;
-          align-items: center;
-          text-align: left; }
-          @media (max-width: 1000px) {
-            .about-me .description-box-container .description-box .description-box-content .description-list-item {
-              display: block; } }
-          .about-me .description-box-container .description-box .description-box-content .description-list-item::before {
-            content: "\A";
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            background: #20845d;
-            display: inline-block;
-            margin: 0 10px; }
-          .about-me .description-box-container .description-box .description-box-content .description-list-item .skills-info {
-            color: #20845d; }
+        @media (max-width: 1000px) {
+          .about-me .description-box-container .description-box .description-box-content .description-list-item {
+            display: block; } }
+        .about-me .description-box-container .description-box .description-box-content .description-list-item::before {
+          content: "\A";
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background: #20845d;
+          display: inline-block;
+          margin: 3px 10px; }
+        .about-me .description-box-container .description-box .description-box-content .description-list-item .skills-info {
+          color: #20845d; }
     .about-me .description-box-container .hide {
       display: none; }
 
