@@ -157,7 +157,7 @@
       color: #c4c8cc;
       list-style-type: none;
       overflow: hidden; }
-      .header .action-menu .stack-data-list .list-item {
+      .header .action-menu .stack-data-list .action-menu-item {
         box-sizing: border-box;
         background: #3c3939;
         border: 1px solid #20845d;
@@ -169,25 +169,25 @@
         padding-left: 5px;
         display: flex;
         align-items: center; }
-        .header .action-menu .stack-data-list .list-item:not(:first-child):before {
+        .header .action-menu .stack-data-list .action-menu-item:not(:first-child):before {
           content: "\A";
           width: 6px;
           height: 6px;
           border-radius: 50%;
           display: block;
           margin-right: 5px; }
-        .header .action-menu .stack-data-list .list-item.silver:before {
+        .header .action-menu .stack-data-list .action-menu-item.silver:before {
           background: #c4c8cc; }
-        .header .action-menu .stack-data-list .list-item.silver .counter-value {
+        .header .action-menu .stack-data-list .action-menu-item.silver .counter-value {
           color: #c4c8cc; }
-        .header .action-menu .stack-data-list .list-item.bronze:before {
+        .header .action-menu .stack-data-list .action-menu-item.bronze:before {
           background: #ab825f; }
-        .header .action-menu .stack-data-list .list-item.bronze .counter-value {
+        .header .action-menu .stack-data-list .action-menu-item.bronze .counter-value {
           color: #ab825f; }
-        .header .action-menu .stack-data-list .list-item:hover {
+        .header .action-menu .stack-data-list .action-menu-item:hover {
           transform: translatex(5px);
           cursor: pointer; }
-        .header .action-menu .stack-data-list .list-item .counter-value {
+        .header .action-menu .stack-data-list .action-menu-item .counter-value {
           margin-right: 20px; }
   .header .introContainer {
     display: flex;
