@@ -59,7 +59,7 @@
     justify-content: flex-end;
     align-items: center;
     height: 50px;
-    z-index: 1;
+    z-index: 900;
     transition: all 0.2s; }
     .header .navbar .headerAnchor {
       width: 30px;
@@ -140,11 +140,55 @@
     position: fixed;
     width: 100%;
     background-color: #000;
-    z-index: 100;
+    z-index: 900;
     opacity: 0.9; }
     .header .sticky .headerAnchor {
       transform: translateX(50px);
       transition: transform 0.2s; }
+  .header .action-menu {
+    position: absolute;
+    right: 0;
+    top: 20%;
+    z-index: 100; }
+    @media (max-width: 1000px) {
+      .header .action-menu {
+        display: none; } }
+    .header .action-menu .stack-data-list {
+      color: #c4c8cc;
+      list-style-type: none;
+      overflow: hidden; }
+      .header .action-menu .stack-data-list .list-item {
+        box-sizing: border-box;
+        background: #3c3939;
+        border: 1px solid #20845d;
+        margin: 10px;
+        margin-right: 0;
+        width: 190px;
+        transform: translatex(145px);
+        transition: transform 0.2s;
+        padding-left: 5px;
+        display: flex;
+        align-items: center; }
+        .header .action-menu .stack-data-list .list-item:not(:first-child):before {
+          content: "\A";
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          display: block;
+          margin-right: 5px; }
+        .header .action-menu .stack-data-list .list-item.silver:before {
+          background: #c4c8cc; }
+        .header .action-menu .stack-data-list .list-item.silver .counter-value {
+          color: #c4c8cc; }
+        .header .action-menu .stack-data-list .list-item.bronze:before {
+          background: #ab825f; }
+        .header .action-menu .stack-data-list .list-item.bronze .counter-value {
+          color: #ab825f; }
+        .header .action-menu .stack-data-list .list-item:hover {
+          transform: translatex(5px);
+          cursor: pointer; }
+        .header .action-menu .stack-data-list .list-item .counter-value {
+          margin-right: 20px; }
   .header .introContainer {
     display: flex;
     justify-content: center;

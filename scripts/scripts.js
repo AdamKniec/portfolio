@@ -1,14 +1,14 @@
 // wertical menu handler
-(function() {
+(function () {
   const aboutMeMenuWrapper = document.querySelector(".vertical-menu-container");
   const aboutMeMenuItems = document.querySelectorAll(".list-item");
   const descriptionBoxes = document.querySelectorAll(".description-box");
 
-  const handleHover = e => {
+  const handleHover = (e) => {
     aboutMeMenuItems.forEach((menuItem, i) => {
       if (e.target === menuItem) {
         //before doing anything - remove the "secondary" and "primary" classes
-        aboutMeMenuItems.forEach(element => {
+        aboutMeMenuItems.forEach((element) => {
           element.classList.remove("secondary");
           element.classList.remove("primary");
         });
@@ -41,12 +41,12 @@
 })();
 
 //onResize, onLoad class manipulation
-(function() {
+(function () {
   const descriptionBoxes = document.querySelectorAll(".description-box");
 
   const manipulateBoxClasses = () => {
     const screenWidth = window.innerWidth;
-    descriptionBoxes.forEach(box => {
+    descriptionBoxes.forEach((box) => {
       if (screenWidth <= 1000) {
         box.classList.remove("hide");
       } else {
@@ -59,7 +59,7 @@
   window.addEventListener("resize", manipulateBoxClasses);
 })();
 // Navbar onScroll handler
-(function() {
+(function () {
   const navbar = document.querySelector(".navbar");
   const introContainer = document.querySelector(".introContainer");
   window.addEventListener("scroll", () => {
@@ -73,11 +73,11 @@
   });
 })();
 // Hamburger menu handler
-(function() {
+(function () {
   const button = document.querySelector(".hamburger");
   const navList = document.querySelector(".navbar-list");
   const body = document.querySelector("body");
-  const handleHamburgerClick = e => {
+  const handleHamburgerClick = (e) => {
     if (e.target === button) {
       navList.classList.add("mobile");
     } else if (e.target !== navList) {
@@ -88,8 +88,8 @@
 })();
 
 // Owl-corousel handler
-(function() {
-  $(document).ready(function() {
+(function () {
+  $(document).ready(function () {
     var owl = $(".owl-carousel");
     owl.owlCarousel({
       items: 1,
@@ -100,15 +100,15 @@
       autoplayHoverPause: true,
       onInitialized: () => {
         let navDotButtons = document.querySelectorAll(".owl-dot");
-        navDotButtons.forEach(button => {
+        navDotButtons.forEach((button) => {
           button.setAttribute("aria-label", "switch-reference");
         });
-      }
+      },
     });
   });
 })();
 // loader handler
-(function() {
+(function () {
   const overlay = document.querySelector(".overlay");
   window.addEventListener("load", () => {
     overlay.classList.add("hidden");
@@ -116,4 +116,23 @@
   overlay.addEventListener("animationend", () => {
     overlay.style.display = "none";
   });
+})();
+//get the data from stackoverflow
+(function () {
+  const repValue = document.querySelector(".reputation .counter-value");
+  const silverBadgeValue = document.querySelector(".silver .counter-value");
+  const bronzeBadgeValue = document.querySelector(".bronze .counter-value");
+
+  const stackDataHandler = (apiData) => {
+    repValue.textContent = apiData.reputation;
+    silverBadgeValue.textContent = apiData.badge_counts.silver;
+    bronzeBadgeValue.textContent = apiData.badge_counts.bronze;
+  };
+
+  fetch(
+    "https://api.stackexchange.com/2.2/users/12259643?order=desc&sort=reputation&site=stackoverflow"
+  )
+    .then((res) => res.json())
+    .then((data) => stackDataHandler(data.items[0]))
+    .catch((err) => console.log(err));
 })();
