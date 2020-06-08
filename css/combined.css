@@ -860,12 +860,12 @@
 
 @font-face {
   font-family: Roboto;
-  src: url("/assets/fonts/Roboto-Thin.ttf");
+  src: url("../assets/fonts/Roboto-Thin.ttf");
   font-weight: bold; }
 
 @font-face {
   font-family: Roboto-medium;
-  src: url("/assets/fonts/Roboto-Medium.ttf");
+  src: url("../assets/fonts/Roboto-Medium.ttf");
   font-weight: bold; }
 
 body {
