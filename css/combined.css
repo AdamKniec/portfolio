@@ -449,7 +449,7 @@
 .projects {
   background-color: #f2f2f2; }
   .projects::after {
-    content: "Projekty";
+    content: "Projects";
     display: block;
     text-align: right;
     color: #ebebeb; }

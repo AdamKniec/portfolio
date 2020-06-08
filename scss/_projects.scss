@@ -1,7 +1,7 @@
 .projects {
   background-color: $grey-light;
   &::after {
-    content: "Projekty";
+    content: "Projects";
     @include light-background-subheader;
   }
   .section-header::before {
